@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
+    <title>{{ title }} | {{ metadata.title }}</title>
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/icons/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/icons/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/icons/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/assets/img/icons/site.webmanifest' | url }}">
+    <link rel="mask-icon" href="{{ '/assets/img/icons/safari-pinned-tab.svg' | url }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- RSS -->
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+
+    <!-- CSS -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{{ '/assets/css/medium.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/prism-base16-monokai.dark.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | url }}">
+  </head>
+  <body>
+    <div class="mini-banner"></div>
+
+    <div id="navbar" class="navbar">
+      <nav class="nav">
+        <a id="logo" href="#" class="logo">
+          <img src="{{ '/assets/img/logo.png' | url }}"/>
+        </a>
+        <div id="nav-content" class="nav-content">
+          <ul class="nav-list">
+            <li><a href="/">Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- MAIN -->
+    <div class="container">
+      {{ content | safe }}
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127054989-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127054989-1');
+    </script>
+    <script src="{{ '/assets/js/script.js' | url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "title": "Chris Diana",
+  "url": "https://chris-diana.com",
+  "feed": {
+    "subtitle": "",
+    "filename": "feed.xml",
+    "path": "/feed.xml",
+    "url": "https://chris-diana.com/feed.xml",
+    "id": "https://chris-diana.com/"
+  },
+  "author": {
+    "name": "Chris Diana",
+    "email": "cdiana.media@gmail.com"
+  }
+}

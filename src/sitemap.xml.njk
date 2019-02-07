@@ -1,0 +1,15 @@
+---
+permalink: /sitemap.xml
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in collections.all %}
+<url>
+<loc>https://chris-diana.com{{ item.url }}</loc>
+<lastmod>{{ item.date | formatDate }}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+{%- endfor %}
+</urlset>

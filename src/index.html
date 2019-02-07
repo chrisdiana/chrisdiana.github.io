@@ -1,0 +1,52 @@
+---
+layout: default
+title: Home
+---
+
+<div class="message">
+  Hello, my name is Chris Diana!
+  I am a developer &amp; designer with a passion for innovative
+  technology based in Boulder, CO. Learn more about me <a href="/about">here</a>.
+</div>
+
+<div class="posts" id="posts">
+  <h1 class="subhead">Recent Posts</h1>
+
+  {% for post in collections.latestPosts %}
+    <section class="post">
+      <div class="post-header">
+        <h2 class="post-title">
+          <a href="{{ post.url | url }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <p class="post-meta">
+          <span class="post-date">
+            {{ post.date | formatDate }}
+          </span>
+          {% for tag in post.data.tags %}
+            <a class="post-tag post-tag-{{ tag }}" href="#">
+              {{ tag }}
+            </a>
+          {% endfor %}
+        </p>
+      </div>
+      <div class="post-description">
+        <p>{{ post.data.excerpt }}</p>
+      </div>
+    </section>
+  {% endfor %}
+</div>
+
+<a href="/posts">View All Posts</a>
+
+<style>
+.message {
+  padding: 10px 0 20px 0;
+  font-style: italic;
+  color: #999;
+  font-weight: 100;
+  line-height: 28px;
+  font-size: 18px;
+}
+</style>

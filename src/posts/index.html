@@ -1,0 +1,33 @@
+---
+layout: default
+title: Posts
+---
+
+<div class="posts" id="posts">
+  <h1 class="subhead">All Posts</h1>
+
+  {% for post in collections.posts %}
+    <section class="post">
+      <div class="post-header">
+        <h2 class="post-title">
+          <a href="{{ post.url | url }}">
+            {{ post.data.title }}
+          </a>
+        </h2>
+        <p class="post-meta">
+          <span class="post-date">
+            {{ post.date | formatDate }}
+          </span>
+          {% for tag in post.data.tags %}
+            <a class="post-tag post-tag-{{ tag }}" href="#">
+              {{ tag }}
+            </a>
+          {% endfor %}
+        </p>
+      </div>
+      <div class="post-description">
+        <p>{{ post.data.excerpt }}</p>
+      </div>
+    </section>
+  {% endfor %}
+</div>

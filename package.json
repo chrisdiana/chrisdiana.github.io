@@ -1,0 +1,20 @@
+{
+  "name": "personal-site",
+  "version": "2.0.0",
+  "description": "Personal site and blog.",
+  "author": "Chris Diana",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": " npm run clean && eleventy --serve --watch",
+    "debug": "npm run clean && DEBUG=Eleventy* eleventy --serve --watch",
+    "clean": "find ./site/ ! -name '.git' -type f -exec rm -rf {} +",
+    "setup": "git worktree add site master"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.6.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
+    "moment": "^2.24.0"
+  }
+}
