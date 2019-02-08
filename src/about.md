@@ -23,8 +23,7 @@ really cool projects. Here are a few of the great companies I've worked with.
 <img class="clients pure-img" src="{{ '/assets/img/companies.png' | url }}" />
 
 Because of the nature of business that many of clients I've worked with are in, I am not able to display some my work on this site.
-If you would like to see some examples, please [reach out]() and I'll forward over a few!
-Otherwise, feel free to view some of my work [here]().
+If you would like to see some examples, please [reach out](/contact) and I'll forward over a few!
 
 
 <style>
