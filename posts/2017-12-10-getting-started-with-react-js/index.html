@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
+    <title>Getting Started with React.js - Concepts and Creating Your First App | Chris Diana</title>
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- RSS -->
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Diana">
+
+    <!-- CSS -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/assets/css/medium.css">
+    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+  </head>
+  <body>
+    <div class="mini-banner"></div>
+
+    <div id="navbar" class="navbar">
+      <nav class="nav">
+        <a id="logo" href="#" class="logo">
+          <img src="/assets/img/logo.png"/>
+        </a>
+        <div id="nav-content" class="nav-content">
+          <ul class="nav-list">
+            <li><a href="/">Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- MAIN -->
+    <div class="container">
+      <h1>Getting Started with React.js - Concepts and Creating Your First App</h1>
+
+<p>React.js is all the rage these days...and there's good reason. Here's a quick
+tutorial to get you up and running with this great JS framework.</p>
+<hr>
+<h2>What is React.js?</h2>
+<p>React.js is a Javascript library used for creating User Interfaces released by the creators of Facebook.
+React was built to solve one huge problem that anyone who has used Javascript extensively has come across at one point or another:</p>
+<blockquote>
+<p>Building applications with data that changes over time</p>
+</blockquote>
+<p>Simply put, React will update the UI to reflect any new underlying data changes.
+It essentially &quot;refreshes&quot; the UI and knows to only update the new stuff. This is
+done using a special diff algorithm (kind of like how Git works) to see what has changed
+and what needs updated. In addition, React uses a Flux architecture pattern <em>(more on this later)</em> to allow for one-way reactive data flow.</p>
+<hr>
+<h2>A Different Way of Thinking with React</h2>
+<p>If we want to understand how React works, we need to understand what the DOM is.
+When we visit a website, our browser renders the source code of our HTML document.
+We use the <strong>DOM (Document Object Model)</strong> as an API to interact with the HTML document.
+The DOM is a fully object-oriented representation of this document as a structured group
+of nodes and objects that have properties and methods. It is essentially the connection
+between a web document (HTML) and a script (JavaScript).</p>
+<p>React.js creates something called a <strong>Virtual DOM</strong> which is an in-memory representation of the DOM (like a snapshot).
+React's Virtual DOM is much lighter than the real browser DOM so manipulation with Virtual DOM is faster and more efficient.
+Because of this, React can quickly diff <em>(check for differences)</em> the current state of the UI with the desired state and compute the minimal set of DOM mutations.
+<em>This golden concept is exactly how React &quot;refreshes&quot; the UI and knows to only update the new stuff</em>.</p>
+<hr>
+<h2>Terms to Know</h2>
+<p><strong>Virtual DOM</strong></p>
+<p>An in-memory representation of the DOM. React manipulates this in order to
+quickly diff the current state of the UI.</p>
+<hr>
+<p><strong>JSX</strong></p>
+<p>JSX is an inline markup that looks like HTML and gets transformed to JavaScript.
+A JSX expression starts with an HTML-like open tag, and ends with the corresponding closing tag.
+JSX tags support the XML self close syntax so you can optionally leave the closing tag off.</p>
+<p>You can definitely use React without JSX but JSX makes React a lot more elegant.
+Just like XML, JSX tags have a tag name, attributes, and children. Here's a quick example:</p>
+<p>Without JSX, the React code would look like</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">render<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token punctuation">(</span></span><br><span class="highlight-line">		React<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span></span><br><span class="highlight-line">			<span class="token string">'div'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token punctuation">{</span>className<span class="token punctuation">:</span> <span class="token string">"commentBox"</span><span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">			<span class="token string">"Hello, world! I am a CommentBox."</span></span><br><span class="highlight-line">		<span class="token punctuation">)</span></span><br><span class="highlight-line">	<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>This is <em>with</em> JSX</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">render<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token punctuation">(</span></span><br><span class="highlight-line">		<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"commentBox"</span><span class="token operator">></span></span><br><span class="highlight-line">			Hello<span class="token punctuation">,</span> world<span class="token operator">!</span> <span class="token constant">I</span> am a CommentBox<span class="token punctuation">.</span></span><br><span class="highlight-line">		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span><br><span class="highlight-line">	<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<hr>
+<p><strong>Flux</strong></p>
+<p><em>Flux</em> or <em>Flux Architecture</em> is a concept/pattern, not a library or framework. The Flux pattern utilizes unidirectional reactive data flow as seen below.</p>
+<p><img src="https://github.com/facebook/flux/raw/master/docs/img/flux-diagram-white-background.png" alt="Flux Architecture"></p>
+<p>This chart may look a bit confusing so let's break it down:</p>
+<ol>
+<li>Your view triggers an event (i.e. a user types text into a form input field)</li>
+<li>The event triggered by the view updates a model</li>
+<li>This model then triggers another event</li>
+<li>Finally, the view responds to that model's event by re-rendering with the latest data</li>
+</ol>
+<p>This type of pattern is designed to guarantee your stores/models always have the right data.</p>
+<hr>
+<p><strong>React.js</strong></p>
+<p>This is the actual Javascript library. React's code is structured in a Flux pattern (as described above). There are 3 main concepts that makeup React:</p>
+<ol>
+<li>Components</li>
+<li>Properties</li>
+<li>State</li>
+</ol>
+<hr>
+<p><strong>React Components</strong></p>
+<p>Components are the smallest, yet most fundamental part of React. They’re similar, in concept, to things like widgets and modules. Think of React components in terms of the smallest possible components that you can define.</p>
+<p>A React component can maintain internal state data. This can be thought as similar to data-binding (think AngularJS/Ember.js). When a component's state data changes, the rendered markup will be updated.</p>
+<p>Here's an example of a basic component:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// This is our React component</span></span><br><span class="highlight-line"><span class="token keyword">var</span> HelloWorld <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  render <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">></span>Hello World<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// We then render the component later</span></span><br><span class="highlight-line">React<span class="token punctuation">.</span><span class="token function">renderComponent</span><span class="token punctuation">(</span></span><br><span class="highlight-line">  <span class="token operator">&lt;</span>HelloWorld <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span></span><br><span class="highlight-line">  document<span class="token punctuation">.</span>body</span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<hr>
+<p><strong>React Properties</strong></p>
+<p>Properties are to React components what attributes are to HTML elements. We can change the behavior based on external information</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// This code will grab the attribute 'name' and output</span></span><br><span class="highlight-line"><span class="token comment">// 'Hello Chris'</span></span><br><span class="highlight-line"><span class="token keyword">var</span> InterfaceComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  render <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">></span>Hello <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">React<span class="token punctuation">.</span><span class="token function">renderComponent</span><span class="token punctuation">(</span></span><br><span class="highlight-line">  <span class="token operator">&lt;</span>InterfaceComponent name<span class="token operator">=</span><span class="token string">"Chris"</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span></span><br><span class="highlight-line">  document<span class="token punctuation">.</span>body</span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<hr>
+<p><strong>React State</strong></p>
+<p>Like React properties, state affects how a component behaves and renders. Properties are defined when components are created. State, on the other hand, is only seen on the inside of component definitions.</p>
+<p>When you think of properties, you should be thinking of component initialization. When you think of state, you should think of an internal data-set which affects the rendering of components.</p>
+<p>Take a look at an example:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Our components initial state is set to have</span></span><br><span class="highlight-line"><span class="token comment">// '{name: Chris, job: Dev }'. When this component is</span></span><br><span class="highlight-line"><span class="token comment">// rendered it will return 'My name is Chris and I am a Dev'</span></span><br><span class="highlight-line"><span class="token keyword">var</span> InterfaceComponent <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  getInitialState <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      name <span class="token punctuation">:</span> <span class="token string">"Chris"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      job  <span class="token punctuation">:</span> <span class="token string">"Dev"</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  render <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">></span></span><br><span class="highlight-line">      My name is <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><br><span class="highlight-line">      and <span class="token constant">I</span> am a <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>job<span class="token punctuation">}</span><span class="token punctuation">.</span></span><br><span class="highlight-line">    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Here we render our component to the document's body</span></span><br><span class="highlight-line">React<span class="token punctuation">.</span><span class="token function">renderComponent</span><span class="token punctuation">(</span></span><br><span class="highlight-line">  <span class="token operator">&lt;</span>InterfaceComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span></span><br><span class="highlight-line">  document<span class="token punctuation">.</span>body</span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<hr>
+<h1>Enough talk. GIVE ME CODE!!!</h1>
+<h3>A Basic React App</h3>
+<p>Let's build a quick little React app to get a better understanding of how everything works.
+We will be building a simple Todo App...suprise!</p>
+<p><strong>1. Setup</strong></p>
+<p>Let's start off with this basic HTML boilerplate:</p>
+<p><em>index.html</em></p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token doctype">&lt;!DOCTYPE html></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>React Todo App<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/babel<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>script.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Notice the &quot;text/babel&quot; instead of &quot;text/javascript&quot; in the link to the <code>script.js</code> which we are using. Babel is the Javascript complier we are using to allow us to write in JSX instead of plain Javascript. Now that the foundation is set, let's get to the React code. Create a file called <code>script.js</code> and open that open. The rest of the following code will be going into this file.</p>
+<hr>
+<p><strong>2. Our First React Component</strong></p>
+<p>Let's start off by creating our first React component. We do this by using the <code>React.createClass()</code> method.
+This first component will be our main application. You can create the component by using the <code>createClass()</code> method.</p>
+<p><em>script.js</em></p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> TodoApp <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Inside our TodoApp, we are first going to call React's <code>getInitialState</code> method. This is where we tell React to set the initial state of our application.
+In this function, we will return an empty array of items. That will the starting state of our todo items.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> TodoApp <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	getInitialState<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token keyword">return</span> <span class="token punctuation">{</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> text<span class="token punctuation">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Just below <code>getInitialState</code>, we are going to add an <code>onChange</code> method.
+This function watches for any UI changes (value input, checked checkboxes, selected option). Each time the UI is changed, we will set the React state based on our input.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> TodoApp <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	getInitialState<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token keyword">return</span> <span class="token punctuation">{</span> items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> text<span class="token punctuation">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	onChange<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> text<span class="token punctuation">:</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Next, we will add the <code>handleSubmit</code> function just below <code>onChange</code>. This function will handle our form submit.
+First, we prevent the default submit event.
+Then, we set a <code>nextItems</code> variable where we grab the item text from the <code>onChange</code> function along
+with setting an <code>id</code> using the current date. After, we set the <code>nextText</code> to empty to set it up for the next entry.
+Finally, we use the <code>setState</code> function to merge current and previous states and prepare for a new entry.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">handleSubmit<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token keyword">var</span> nextItems <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">		text<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text<span class="token punctuation">,</span></span><br><span class="highlight-line">		id<span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token keyword">var</span> nextText <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">		items<span class="token punctuation">:</span> nextItems<span class="token punctuation">,</span></span><br><span class="highlight-line">		text<span class="token punctuation">:</span> nextText</span><br><span class="highlight-line">	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span></span></code></pre>
+<p>The last thing we are going to do to complete our main component <code>TodoApp</code> is add a <code>render</code> function
+which returns a tree of React components which will eventually render to HTML.
+Take note of a few things: First, notice since we are using JSX, instead of using the standard <code>&lt;div class=&quot;row&quot;&gt;</code> we have to use <code>&lt;div className=&quot;row&quot;&gt;</code>. Also notice we are referencing our previous functions inside our returned view. On our form submit we call the <code>handleSubmit</code> function and when there is UI changes to the form input, we call the <code>onChange</code> function.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">render<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token punctuation">(</span></span><br><span class="highlight-line">		<span class="token operator">&lt;</span>div<span class="token operator">></span></span><br><span class="highlight-line">			<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"row"</span><span class="token operator">></span></span><br><span class="highlight-line">				<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"four columns"</span><span class="token operator">></span></span><br><span class="highlight-line">					<span class="token operator">&lt;</span>form onSubmit<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleSubmit<span class="token punctuation">}</span><span class="token operator">></span></span><br><span class="highlight-line">						<span class="token operator">&lt;</span>input className<span class="token operator">=</span><span class="token string">"u-full-width"</span> type<span class="token operator">=</span><span class="token string">"text"</span> onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>onChange<span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span></span><br><span class="highlight-line">						<span class="token operator">&lt;</span>button className<span class="token operator">=</span><span class="token string">"button-primary"</span><span class="token operator">></span>Add <span class="token operator">+</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span></span><br><span class="highlight-line">					<span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">></span></span><br><span class="highlight-line">				<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span><br><span class="highlight-line">				<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"eight columns"</span><span class="token operator">></span></span><br><span class="highlight-line">					<span class="token operator">&lt;</span>TodoList items<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>items<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span></span><br><span class="highlight-line">				<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span><br><span class="highlight-line">			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span><br><span class="highlight-line">		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span><br><span class="highlight-line">	<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>We have a form to input information and handle the events, but still nowhere to render the actual list.
+Notice the <code>&lt;TodoList items={this.state.items} /&gt;</code> node.
+This is where we will be calling another React component that will handle rendering list items.
+What we are basically doing is calling one component inside of another. React encourages &quot;smallest possible components that you can define&quot;. Since each component can be isolated, fixes can be applied to one component without inherently affecting the others.</p>
+<p>Next, let's build our <code>TodoList</code> component. This will handle rendering the actual list. We will be placing this code outside of our <code>TodoApp</code> component, just above it:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> TodoList <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">	render<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token keyword">var</span> <span class="token function-variable function">createItem</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">			<span class="token keyword">return</span> <span class="token operator">&lt;</span>li key<span class="token operator">=</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>id<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>text<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span><span class="token punctuation">;</span></span><br><span class="highlight-line">		<span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line">		<span class="token keyword">return</span> <span class="token operator">&lt;</span>ul<span class="token operator">></span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>createItem<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Here we are creating a list item for each todo list item and then returning those inside of an unordered list element. Notice we are referencing the React properties by using <code>this.props</code> to get the items from attribute <code>items</code> in our <code>TodoApp.render()</code> method (<code>&lt;TodoList items={this.state.items} /&gt;</code>).</p>
+<p>The last step in our app is to render it all to our real DOM. We will call <code>ReactDOM.render()</code> method along with our main app and a place for it to go. In this example, we want to render it to <code>&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;</code>.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span></span><br><span class="highlight-line">	<span class="token operator">&lt;</span>TodoApp <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span></span><br><span class="highlight-line">	document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>And there we have it! Our first React app. Once you get your head around all the terminology and concepts,
+React is an incredible tool for both large and small applications.</p>
+<p>You can download the full annotated code for this tutorial <a href="https://github.com/codoki/react-todo">here on Github</a></p>
+<p><img src="https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/react-todo.png" alt="React Todo App Demo Screenshot"></p>
+<hr>
+<h2>React.js VS AngularJS?</h2>
+<p>There is an ongoing &quot;debate&quot; taking place between the 2 juggernauts AngularJS and React.js in the Javascript
+framework universe on which is best. Angular as you may know is supported by Google while React is backed by Facebook.
+What is the main difference between React.js and AngularJS?
+There is alot of <em>&quot;Angular vs React&quot;</em> going around the net, but comparing them
+is similar to comparing a brand new car (Angular) to a brand new engine (React).</p>
+<p><strong>AngularJS</strong></p>
+<ul>
+<li>A Front-end full <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC Framework</a>.</li>
+<li>Uses HTML, CSS and Javascript code.</li>
+</ul>
+<p><strong>React.js</strong></p>
+<ul>
+<li>A <em>View</em> Framework. The V in M<strong>V</strong>C.</li>
+<li>Uses just Javascript code with a special syntax called <em>JSX</em> which allows you
+to use HTML in your Javascript.</li>
+</ul>
+<p>So React.js is like a engine while AngularJS is the entire car. Since React is just the
+<em>V</em> of MVC you could technically use React.js <em>with</em> AngularJS, substituting AngularJS views
+for that of React.js (take a look at one example <a href="https://github.com/ngReact/ngReact">here</a>).</p>
+<hr>
+<h2>Other Things You Can Do With React - <em>React Native</em></h2>
+<p>Now that you understand the fundamentals of React, you can use your newfound knowledge
+to actually build <em>Native Mobile</em> apps! Facebook has also released a great library called
+<a href="https://facebook.github.io/react-native/">React Native</a> which allows you to use React.js
+in order to build apps on native platforms such as iOS and Android. This means you can use
+all of the same concepts across multiple platforms.
+Take a deeper look <a href="http://facebook.github.io/react-native/docs/getting-started.html">here</a>.</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://facebook.github.io/react/index.html">React.js</a></li>
+<li><a href="https://github.com/facebook/react">React.js - Github</a></li>
+<li><a href="https://angularjs.org/">AngularJS</a></li>
+<li><a href="http://buildwithreact.com/tutorial/jsx">Built with React</a></li>
+<li><a href="https://facebook.github.io/react-native/">React Native</a></li>
+<li><a href="https://github.com/facebook/react-native">React Native - Github</a></li>
+<li><a href="https://rnplay.org/">React Native Playground</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">DOM - Mozilla</a></li>
+<li><a href="http://conferences.oreilly.com/fluent/fluent2014/public/schedule/detail/32395">The Secret's of React's Virtual DOM</a></li>
+<li><a href="http://blog.andrewray.me/reactjs-for-stupid-people/">React for Stupid People</a></li>
+<li><a href="https://medium.com/react-tutorials">React Tutorials</a></li>
+</ul>
+<hr>
+<p>Suggestions or edits? Feel free to submit a pull request with your
+edit on <a href="https://github.com/codoki/codoki.github.io/tree/master/_posts">Github</a></p>
+
+
+<p><a href="/">← Home</a></p>
+
+    </div>
+
+    <div class="footer">
+      <div class="email-signup">
+        <hr>
+        <div class="email-signup-header">Sign up for updates on the latest posts, tutorials and more.</div>
+        <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6a958cda028d0d312d1ef3ccd_02b3438a51" tabindex="-1" value=""></div>
+          <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button email-signup-button">Signup</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127054989-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127054989-1');
+    </script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,38 +1,41 @@
-/*         __         _             ___
- *   _____/ /_  _____(_)____   ____/ (_)___ _____  ____ _
- *  / ___/ __ \/ ___/ / ___/  / __  / / __ `/ __ \/ __ `/
- * / /__/ / / / /  / (__  )  / /_/ / / /_/ / / / / /_/ /
- * \___/_/ /_/_/  /_/____/   \__,_/_/\__,_/_/ /_/\__,_/
- *
- * Chris Diana | chrisdianamedia.com | github.com/cdmedia
- */
-(function() {
+// var mixer = mixitup('.portfolio', {
+//   animation: {
+//         duration: 250,
+//         nudge: true,
+//         reverseOut: false,
+//         effects: "fade translateX(20%)"
+//     }
+// });
 
-    // Navigation
-    $('.toggle').click(function() {
-        $('#navicon').toggleClass('active');
-        $('#overlay').toggleClass('open');
-    });
+//(function() {
 
-    // Portfolio
-    $('#portfolio-gallery').mixItUp({
-        animation: {
-            duration: 220,
-            effects: 'fade stagger(34ms) translateZ(-40px)',
-            easing: 'ease'
-        }
-    });
+  var navbar = document.getElementById('navbar');
+  var logo = document.getElementById('logo');
+  var navcontent = document.getElementById('nav-content');
+  var navbarState = false;
 
-    // Featherlight settings
-    $.featherlight.contentFilters.iframe = {
-        process: function(url){
-            return $('<iframe width="800" height="500" src="' + url + '"/>');
-        }
-    };
+  function toggleNavbar() {
+    if(navbarState) {
+      logo.classList.add('logo-hover');
+      navcontent.classList.add('nav-content-hover');
+    } else {
+      navcontent.classList.remove('nav-content-hover');
+      logo.classList.remove('logo-hover');
+    }
+  }
 
-    // <pre style=line-height:1>
-    // for(i=1;i<4001;i++) {
-    //     document.write((Math.random()<.5?"\u2571":"\u2572")+(i%80?"":"\n"));
-    // }
+  navbar.addEventListener('mouseenter', function() {
+    navbarState = true;
+    toggleNavbar();
+  });
+  navbar.addEventListener('mouseleave', function() {
+    navbarState = false;
+    toggleNavbar();
+  });
+  navbar.addEventListener('click', function(){
+    toggleNavbar();
+    navbarState = !navbarState;
+  });
 
-})();
+
+//})();
