@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting Started with React.js - Concepts and Creating Your First App
+excerpt: React.js is all the rage these days...and there's good reason. Here's a quick tutorial to get you up and running with this great JS framework.
 comments: true
 tags: [javascript, react.js, virtual dom, jsx, flux]
 ---

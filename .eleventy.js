@@ -10,6 +10,37 @@ module.exports = function(config) {
     return moment(dateObj).format('YYYY-MM-DD');
   });
 
+  config.addFilter('squash', (text) => {
+    // "text" : "{{ (item.data.title + " " + item.templateContent) | squash }}"
+    /*
+    var content = new String(text);
+    var content = content.toLowerCase();
+    var re = /(&lt;.*?&gt;)/gi;
+    var plain = unescape(content.replace(re, ''));
+    var words = plain.split(' ');
+    var deduped = [...(new Set(words))];
+    var dedupedStr = deduped.join(' ')
+    var result = dedupedStr.replace(/\b(\.|\,|the|a|an|and|am|you|I|to|if|of|off|me|my|on|in|it|is|at|as|we|do|be|has|but|was|so|no|not|or|up|for)\b/gi, '');
+    result = result.replace(/\.|\,|\?|-|—|\n/g, '');
+    result = result.replace(/[ ]{2,}/g, ' ');
+    */
+    var content = new String(text);
+    var escapedContent = content
+      .toLowerCase()
+      .replace(/(&lt;.*?&gt;)/gi, '')
+      .replace(/\\n/g, "")
+      .replace(/\\'/g, "")
+      .replace(/\\"/g, '')
+      .replace(/\\&/g, "")
+      .replace(/\\r/g, "")
+      .replace(/\\t/g, "")
+      .replace(/\\b/g, "")
+      .replace(/\\f/g, "");
+    var result = escapedContent
+      .replace(/\b(\.|\,|the|a|an|and|am|you|I|to|if|of|off|me|my|on|in|it|is|at|as|we|do|be|has|but|was|so|no|not|or|up|for)\b/gi, '');
+    return JSON.stringify(result);
+  });
+
   config.addCollection('latestPosts', (collection) => {
     return collection
       .getFilteredByGlob('./src/posts/*')

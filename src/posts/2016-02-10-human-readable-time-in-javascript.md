@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Human Readable Time in JavaScript 
+title: Human Readable Time in JavaScript
 excerpt: This example below shows how to convert milliseconds to human readable time in JavaScript.
 comments: true
-tags: [javascript]
 ---
 
 This example below shows how to convert milliseconds to human readable time such as *3 days 2 hours and 29 seconds* using `milliseconds`.
@@ -22,7 +21,7 @@ function millisecondsToStr (milliseconds) {
 	if (years) {
 		return years + ' year' + numberEnding(years);
 	}
-	//TODO: Months! Maybe weeks? 
+	//TODO: Months! Maybe weeks?
 	var days = Math.floor((temp %= 31536000) / 86400);
 	if (days) {
 		return days + ' day' + numberEnding(days);
