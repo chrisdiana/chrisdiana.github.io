@@ -15,6 +15,11 @@ a:hover {
   color: #52abff;
 }
 
+input {
+      font-size: 18px;
+    padding: 8px 12px;
+}
+
 
 /* NAVBAR */
 .navbar {
@@ -187,9 +192,34 @@ background: green;
 color: #fff;
 }
 
+.footer {
+}
+
+.email-signup {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 3rem;
+  font-style: italic;
+  color: #999;
+}
+.email-signup-header {
+  padding: 10px 0;
+}
+.email-signup-input {
+}
+.email-signup-button {
+      font-size: 18px;
+    margin: 14px;
+    background: #0090dc;
+    border: none;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    color: #fff;
+}
+.email-signup-button:hover {
+  background: #006aa3;
+}
 
 @media (max-width: 840px) {
-
-
-
 }
