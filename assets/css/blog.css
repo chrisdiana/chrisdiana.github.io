@@ -180,6 +180,7 @@ border-radius: 3px;
 margin-right: 5px;
 color: rgba(0,0,0,.68);
 background: rgba(0,0,0,.05);
+    line-height: 32px;
 }
 
 .post .post-date {
@@ -193,13 +194,13 @@ color: #fff;
 }
 
 .footer {
+  padding: 2rem 0;
 }
 
 .email-signup {
     max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-bottom: 3rem;
+    margin: 0 auto 1rem auto;
+    padding: 10px;
   font-style: italic;
   color: #999;
 }
@@ -219,6 +220,16 @@ color: #fff;
 }
 .email-signup-button:hover {
   background: #006aa3;
+}
+
+a.edit-link {
+      font-size: 12px;
+    text-transform: uppercase;
+    color: #adadad;
+    text-decoration: none;
+}
+a.edit-link:hover {
+  color: #52abff;
 }
 
 @media (max-width: 840px) {
