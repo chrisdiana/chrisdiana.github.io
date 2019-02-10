@@ -9,7 +9,7 @@
     "dev": " npm run clean && eleventy --serve --watch",
     "debug": "npm run clean && DEBUG=Eleventy* eleventy --serve --watch",
     "clean": "find ./site/ -mindepth 1 ! -name '*.git' -delete",
-    "setup": "git worktree add site master"
+    "setup": "npm install && git worktree add site master"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.6.0",
