@@ -3,6 +3,16 @@ layout: default
 templateClass: tmpl-post
 ---
 <h1>{{ title }}</h1>
+<!--
+<span class="post-date">
+  {{ post.date | formatDate }}
+</span>
+-->
+{% for tag in tags %}
+  <a class="tag tag-{{ tag }}" href="#">
+    {{ tag }}
+  </a>
+{% endfor %}
 
 {{ content | safe }}
 

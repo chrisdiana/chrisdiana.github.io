@@ -2,7 +2,8 @@
 layout: post
 title: Intro to using SQLite with PHP
 comments: true
-tags: [sqlite]
+excerpt: Learn to use SQLite, a serverless, configuration-free and reliable database engine used on everything from iPods to Mobile apps.
+tags: [sqlite, php]
 ---
 
 SQLite is a serverless, configuration-free and reliable database engine used on

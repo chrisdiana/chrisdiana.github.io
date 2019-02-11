@@ -7,6 +7,10 @@ module.exports = function(config) {
   config.addPlugin(pluginSyntaxHighlight);
 
   config.addFilter('formatDate', (dateObj) => {
+    return moment(dateObj).format('MM-DD-YYYY');
+  });
+
+  config.addFilter('formatDateSitemap', (dateObj) => {
     return moment(dateObj).format('YYYY-MM-DD');
   });
 
