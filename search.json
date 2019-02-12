@@ -1,13 +1,9 @@
 {"search" : [{
-    "url" : "/posts/2016-02-10-human-readable-time-in-javascript/",
-    "title" : "Human Readable Time in JavaScript",
-    "tags" : ""
-  },{
     "url" : "/posts/2016-01-20-getting-started-with-react-js/",
     "title" : "Getting Started with React.js - Concepts and Creating Your First App",
     "tags" : "javascript,react.js,virtual dom,jsx,flux"
   },{
     "url" : "/posts/2015-05-26-intro-to-using-sqlite-with-php/",
     "title" : "Intro to using SQLite with PHP",
-    "tags" : "sqlite"
+    "tags" : "sqlite,php"
   }]}

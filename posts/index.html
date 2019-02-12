@@ -21,6 +21,7 @@
     <!-- CSS -->
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
     <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
@@ -41,11 +42,49 @@
             <li><a href="/">Blog</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="#" id="btn-search" class="btn btn--search">
+              <i class="sli icon-magnifier"></i></a>
+            </li>
           </ul>
         </div>
       </nav>
     </div>
 
+    <div class="search">
+      <a href="#" id="btn-search-close" class="btn btn--search-close">
+        <i class="sli icon-close"></i>
+      </a>
+			<form class="search__form" action="">
+				<input
+          id="search"
+          class="search__input"
+          name="search"
+          type="search"
+          placeholder=""
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false" />
+				<span class="search__info">Hit enter to search or ESC to close</span>
+			</form>
+
+      <div class="search-suggestions">
+        <div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+        </div>
+      </div>
+      <!--
+			<div class="search__related">
+				<div class="search__suggestion">
+          <h3>May I Suggest?</h3>
+          <p>#javascript #react #d3 #php</p>
+				</div>
+				<div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+				</div>
+			</div>
+      -->
+		</div>
     <!--
     <input id="search" type="text" placeholder="Search..." />
     <div class="search">
@@ -62,30 +101,11 @@
 			</div>-->
 
     <!-- MAIN -->
-    <div class="container">
+    <div class="container main">
       
 <div class="posts" id="posts">
   <h1 class="subhead">All Posts</h1>
 
-  
-    <section class="post">
-      <div class="post-header">
-        <h2 class="post-title">
-          <a href="/posts/2016-02-10-human-readable-time-in-javascript/">
-            Human Readable Time in JavaScript
-          </a>
-        </h2>
-        <p class="post-meta">
-          <span class="post-date">
-            2016-02-10
-          </span>
-          
-        </p>
-      </div>
-      <div class="post-description">
-        <p>This example below shows how to convert milliseconds to human readable time in JavaScript.</p>
-      </div>
-    </section>
   
     <section class="post">
       <div class="post-header">
@@ -96,26 +116,26 @@
         </h2>
         <p class="post-meta">
           <span class="post-date">
-            2016-01-20
+            01-20-2016
           </span>
           
-            <a class="post-tag post-tag-javascript" href="#">
+            <a class="tag tag-javascript" href="#">
               javascript
             </a>
           
-            <a class="post-tag post-tag-react.js" href="#">
+            <a class="tag tag-react.js" href="#">
               react.js
             </a>
           
-            <a class="post-tag post-tag-virtual dom" href="#">
+            <a class="tag tag-virtual dom" href="#">
               virtual dom
             </a>
           
-            <a class="post-tag post-tag-jsx" href="#">
+            <a class="tag tag-jsx" href="#">
               jsx
             </a>
           
-            <a class="post-tag post-tag-flux" href="#">
+            <a class="tag tag-flux" href="#">
               flux
             </a>
           
@@ -135,27 +155,32 @@
         </h2>
         <p class="post-meta">
           <span class="post-date">
-            2015-05-26
+            05-26-2015
           </span>
           
-            <a class="post-tag post-tag-sqlite" href="#">
+            <a class="tag tag-sqlite" href="#">
               sqlite
+            </a>
+          
+            <a class="tag tag-php" href="#">
+              php
             </a>
           
         </p>
       </div>
       <div class="post-description">
-        <p></p>
+        <p>Learn to use SQLite, a serverless, configuration-free and reliable database engine used on everything from iPods to Mobile apps.</p>
       </div>
     </section>
   
 </div>
+
     </div>
 
     <div class="footer">
       <div class="email-signup">
         <hr>
-        <div class="email-signup-header">Sign up for updates on the latest posts, tutorials and more.</div>
+        <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
         <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
           <div id="mce-responses" class="clear">

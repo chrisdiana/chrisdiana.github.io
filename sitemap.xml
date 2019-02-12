@@ -1,64 +1,57 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://chris-diana.com/feed.xml</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/search.json</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/sitemap.xml</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/posts/2016-01-20-getting-started-with-react-js/</loc>
-<lastmod>2016-01-20</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/about/</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/contact/</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/posts/2015-05-26-intro-to-using-sqlite-with-php/</loc>
-<lastmod>2015-05-26</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/posts/2016-02-10-human-readable-time-in-javascript/</loc>
-<lastmod>2016-02-10</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://chris-diana.com/posts/</loc>
-<lastmod>2019-02-08</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
+    <url>
+      <loc>https://chris-diana.com/feed.xml</loc>
+      <lastmod>2019-02-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/search.json</loc>
+      <lastmod>2019-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/sitemap.xml</loc>
+      <lastmod>2019-02-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/posts/2016-01-20-getting-started-with-react-js/</loc>
+      <lastmod>2016-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/about/</loc>
+      <lastmod>2019-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/contact/</loc>
+      <lastmod>2019-02-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/</loc>
+      <lastmod>2019-02-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/posts/2015-05-26-intro-to-using-sqlite-with-php/</loc>
+      <lastmod>2015-05-26</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/posts/</loc>
+      <lastmod>2019-02-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
 </urlset>
