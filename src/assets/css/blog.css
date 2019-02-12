@@ -433,10 +433,10 @@ a.edit-link:hover {
 }
 
 .search__suggestion__list {
-  list-style: none;
       margin: 0 auto;
     padding: 0 1rem;
     max-width: 900px;
+    color: #fff;
 }
 .search__suggestion__list li a {
   color: #fff;
@@ -448,7 +448,9 @@ a.edit-link:hover {
 }
 
 .search-suggestions {
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 5rem;
   text-align:left;
 }

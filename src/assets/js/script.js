@@ -33,11 +33,7 @@
   });
 
 
-  var search = document.getElementById('search');
-  var searchSuggestionList = document.getElementById('search-suggestion-list');
-  search.addEventListener('input', function(event) {
-    event.preventDefault();
-    var searchString = event.target.value;
+  function runSearch(searchString) {
     var searchIndex;
 
     function buildList(items) {
@@ -60,19 +56,29 @@
         var results = [];
         for(var item in searchIndex) {
           //var found = searchIndex[item].text.indexOf(searchString);
-          var found = searchIndex[item].title.toLowerCase().indexOf(searchString);
-          if(found != -1 ) {
-            results.push(searchIndex[item])
+          var titleFound = searchIndex[item].title.toLowerCase().indexOf(searchString);
+          var tagFound = searchIndex[item].tags.split(',').find(function(tag) {
+            return tag.toLowerCase() === searchString.toLowerCase();
+          });
+          if(titleFound != -1 || tagFound) {
+            results.push(searchIndex[item]);
           }
         }
         if(searchString === '') {
           results = [];
         }
         buildList(results);
-        console.log(results);
     });
 
+  }
 
+
+  var search = document.getElementById('search');
+  var searchSuggestionList = document.getElementById('search-suggestion-list');
+  search.addEventListener('input', function(event) {
+    event.preventDefault();
+    var searchString = event.target.value;
+    runSearch(searchString);
   }, false);
 
 
@@ -88,7 +94,8 @@
 		openCtrl = document.getElementById('btn-search'),
 		closeCtrl = document.getElementById('btn-search-close'),
 		searchContainer = document.querySelector('.search'),
-		inputSearch = searchContainer.querySelector('.search__input');
+		inputSearch = searchContainer.querySelector('.search__input'),
+    tagEls = document.getElementsByClassName('tag');
 
   var searchOpen = false;
 
@@ -99,6 +106,12 @@
 	function initEvents() {
 		openCtrl.addEventListener('click', openSearch);
 		closeCtrl.addEventListener('click', closeSearch);
+    for(var i = 0; i <= tagEls.length; i++) {
+      var tagEl = tagEls[i];
+      if(tagEl) {
+        tagEl.addEventListener('click', openTagSearch);
+      }
+    }
 		document.addEventListener('keyup', function(ev) {
 			// escape key
 			if( ev.keyCode == 27 ) {
@@ -112,6 +125,13 @@
 			}
 		});
 	}
+
+  function openTagSearch(event) {
+    var tag = event.target.innerText.toLowerCase().trim();
+    openSearch();
+		inputSearch.value = tag;
+    runSearch(tag);
+  }
 
 	function openSearch() {
 		mainContainer.classList.add('container--move');
