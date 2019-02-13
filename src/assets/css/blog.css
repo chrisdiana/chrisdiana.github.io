@@ -212,6 +212,7 @@ color: #fff;
 }
 .email-signup-header {
   padding: 10px 0;
+  font-size: 14px;
 }
 .email-signup-input {
 }
@@ -588,4 +589,17 @@ a.edit-link:hover {
   50% {transform: rotate(20deg);}
   75% {transform: rotate(-5deg);}
   100% {transform: rotate(0deg);}
+}
+
+.social-links-footer {
+  margin-bottom: 2rem;
+}
+.social-links-footer a {
+  margin-right: 38px;
+  font-size: 28px;
+  text-align: center;
+  color: #b0cadb;
+}
+.social-links-footer a:hover {
+  color: #1bacff;
 }

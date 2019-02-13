@@ -2,21 +2,25 @@
 layout: default
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
-<!--
-<span class="post-date">
-  {{ post.date | formatDate }}
-</span>
--->
-{% for tag in tags %}
-  <a class="tag tag-{{ tag }}" href="#">
-    {{ tag }}
-  </a>
-{% endfor %}
+<article class="post">
+  <section class="post-content">
+    <h1>{{ title }}</h1>
+    <!--
+    <span class="post-date">
+      {{ post.date | formatDate }}
+    </span>
+    -->
+    {% for tag in tags %}
+      <a class="tag tag-{{ tag }}" href="#">
+        {{ tag }}
+      </a>
+    {% endfor %}
 
-{{ content | safe }}
+    {{ content | safe }}
 
-<a href="{{ '/' | url }}">← Home</a><br>
-<p style="text-align:right">
-  <a class="edit-link" href="https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/{{ page.inputPath }}">Edit this page on GitHub</a>
-</p>
+    <a href="{{ '/' | url }}">← Home</a><br>
+    <p style="text-align:right">
+      <a class="edit-link" href="https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/{{ page.inputPath }}">Edit this page on GitHub</a>
+    </p>
+  </section>
+</article>

@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{{ metadata.description }}">
     <title>{{ title }} | {{ metadata.title }}</title>
 
     <!-- Icons -->
@@ -18,16 +19,28 @@
     <!-- RSS -->
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
 
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="{{ metadata.title }}" />
+    <meta property="og:title" content="{{ title }}"/>
+    <meta property="og:description" content="{{ excerpt }}" />
+    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:url" content="{{ url }}" >
+    <meta property="og:type" content="blog" />
+    <meta property="article:published_time" content="{{ date | formatDateSitemap }}">
+
     <!-- CSS -->
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
     <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+    <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="{{ '/assets/css/medium.css' | url }}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/medium-2.css' | url }}">
+    <link rel="stylesheet" type="text/css" media="print" href="{{ '/assets/css/print.css' | url}}" />
     <link rel="stylesheet" href="{{ '/assets/css/prism-base16-monokai.dark.css' | url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | url }}">
+    <!--<link rel="stylesheet" href="{{ '/assets/css/blog.css' | url }}">-->
   </head>
   <body>
     <div class="mini-banner"></div>
@@ -85,29 +98,21 @@
 			</div>
       -->
 		</div>
-    <!--
-    <input id="search" type="text" placeholder="Search..." />
-    <div class="search">
-				<form class="search__form" action="">
-					<input class="search__input" name="search" type="search" placeholder="Find..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-					<span class="search__info">Hit enter to search or ESC to close</span>
-				</form>
-				<div class="search__related">
-					<div class="search__suggestion">
-						<h3>May We Suggest?</h3>
-						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
-					</div>
-				</div>
-			</div>-->
 
     <!-- MAIN -->
-    <div class="container main">
+    <main class="content container main">
       {{ content | safe }}
-    </div>
+    </main>
 
     <div class="footer">
       <div class="email-signup">
         <hr>
+        <div class="social-links-footer">
+          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fa fa-github"></i></a>
+          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fa fa-stack-overflow"></i></a>
+          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fa fa-dribbble"></i></a>
+          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fa fa-linkedin"></i></a>
+        </div>
         <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
         <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
