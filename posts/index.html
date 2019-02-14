@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
     <title>Posts | Chris Diana</title>
 
@@ -18,14 +19,25 @@
     <!-- RSS -->
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Diana">
 
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Chris Diana" />
+    <meta property="og:title" content="Posts"/>
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" >
+    <meta property="og:type" content="blog" />
+    <meta property="article:published_time" content="2019-02-14">
+
     <!-- CSS -->
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
     <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/assets/css/medium.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/medium-2.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
     <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
     <link rel="stylesheet" href="/assets/css/blog.css">
   </head>
@@ -85,23 +97,9 @@
 			</div>
       -->
 		</div>
-    <!--
-    <input id="search" type="text" placeholder="Search..." />
-    <div class="search">
-				<form class="search__form" action="">
-					<input class="search__input" name="search" type="search" placeholder="Find..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-					<span class="search__info">Hit enter to search or ESC to close</span>
-				</form>
-				<div class="search__related">
-					<div class="search__suggestion">
-						<h3>May We Suggest?</h3>
-						<p>#drone #funny #catgif #broken #lost #hilarious #good #red #blue #nono #why #yes #yesyes #aliens #green</p>
-					</div>
-				</div>
-			</div>-->
 
     <!-- MAIN -->
-    <div class="container main">
+    <main class="content main">
       
 <div class="posts" id="posts">
   <h1 class="subhead">All Posts</h1>
@@ -175,11 +173,17 @@
   
 </div>
 
-    </div>
+    </main>
 
     <div class="footer">
       <div class="email-signup">
         <hr>
+        <div class="social-links-footer">
+          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fa fa-github"></i></a>
+          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fa fa-stack-overflow"></i></a>
+          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fa fa-dribbble"></i></a>
+          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fa fa-linkedin"></i></a>
+        </div>
         <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
         <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
@@ -202,6 +206,7 @@
 
       gtag('config', 'UA-127054989-1');
     </script>
+    <script id="dsq-count-scr" src="//cdianamedia.disqus.com/count.js" async></script>
     <script src="/assets/js/script.js"></script>
   </body>
 </html>
