@@ -19,6 +19,12 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>https://chris-diana.com/posts/2015-01-27-getting-started-with-slim-framework/</loc>
+      <lastmod>2015-01-27</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>https://chris-diana.com/posts/2016-01-20-getting-started-with-react-js/</loc>
       <lastmod>2016-01-20</lastmod>
       <changefreq>monthly</changefreq>
@@ -43,8 +49,20 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>https://chris-diana.com/posts/2015-03-20-getting-started-with-slim-framework-pt-2/</loc>
+      <lastmod>2015-03-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>https://chris-diana.com/posts/2015-05-26-intro-to-using-sqlite-with-php/</loc>
       <lastmod>2015-05-26</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://chris-diana.com/posts/2015-09-01-native-javascript-templating/</loc>
+      <lastmod>2015-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
     </url>

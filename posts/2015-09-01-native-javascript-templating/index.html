@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
+    <title>Native Javascript Templating - Goodbye Handlebars | Chris Diana</title>
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- RSS -->
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Diana">
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Chris Diana" />
+    <meta property="og:title" content="Native Javascript Templating - Goodbye Handlebars"/>
+    <meta property="og:description" content="Ditch your javascript template plugin for a native javascript template solution you can use in your next app." />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" >
+    <meta property="og:type" content="blog" />
+    <meta property="article:published_time" content="2019-02-14">
+
+    <!-- CSS -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/medium-2.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
+    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+  </head>
+  <body>
+    <div class="mini-banner"></div>
+
+    <div id="navbar" class="navbar">
+      <nav class="nav">
+        <a id="logo" href="#" class="logo">
+          <img src="/assets/img/logo.png"/>
+        </a>
+        <div id="nav-content" class="nav-content">
+          <ul class="nav-list">
+            <li><a href="/">Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="#" id="btn-search" class="btn btn--search">
+              <i class="sli icon-magnifier"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="search">
+      <a href="#" id="btn-search-close" class="btn btn--search-close">
+        <i class="sli icon-close"></i>
+      </a>
+			<form class="search__form" action="">
+				<input
+          id="search"
+          class="search__input"
+          name="search"
+          type="search"
+          placeholder=""
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false" />
+				<span class="search__info">Hit enter to search or ESC to close</span>
+			</form>
+
+      <div class="search-suggestions">
+        <div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+        </div>
+      </div>
+      <!--
+			<div class="search__related">
+				<div class="search__suggestion">
+          <h3>May I Suggest?</h3>
+          <p>#javascript #react #d3 #php</p>
+				</div>
+				<div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+				</div>
+			</div>
+      -->
+		</div>
+
+    <!-- MAIN -->
+    <main class="content main">
+      <article class="post">
+  <div class="noarticleimage">
+
+    <div class="post-meta">
+      <h1 class="post-title">Native Javascript Templating - Goodbye Handlebars</h1>
+      <!--
+      <span class="post-date">
+        02-14-2019
+      </span>
+      -->
+      <div class="post-meta-text">
+        
+          <a class="tag tag-javascript" href="#">
+            javascript
+          </a>
+        
+          <a class="tag tag-jquery" href="#">
+            jquery
+          </a>
+        
+      </div>
+    </div>
+    <section class="post-content">
+
+      <p>Ditch your javascript template plugin for a native javascript template solution
+you can use in your next app.</p>
+<h3>Why Javascript Templates?</h3>
+<p>First of all, why do we even need a javascript template plugin at all?
+Let's say you want to generate a section of HTML using just javascript.
+You will have to rely on concatenation in order to string the template together. It can get
+messy and begin to mesh views and logic.</p>
+<h4>The Problem</h4>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Simple array of movies</span></span><br><span class="highlight-line"><span class="token keyword">var</span> movies <span class="token operator">=</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Inception"</span><span class="token punctuation">,</span> <span class="token string">"rating"</span><span class="token punctuation">:</span> <span class="token string">"4"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Goodfellas"</span><span class="token punctuation">,</span> <span class="token string">"rating"</span><span class="token punctuation">:</span> <span class="token string">"5"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Fight Club"</span><span class="token punctuation">,</span> <span class="token string">"rating"</span><span class="token punctuation">:</span> <span class="token string">"4"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Loop through the movie array and append each list item</span></span><br><span class="highlight-line">movies<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token keyword">var</span> template <span class="token operator">=</span> <span class="token string">'&lt;li>&lt;span class="movie-name">'</span> <span class="token operator">+</span> movie<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">'&lt;/span>&lt;span class="movie-rating">'</span> <span class="token operator">+</span> movie<span class="token punctuation">.</span>rating <span class="token operator">+</span> <span class="token string">'&lt;/span>&lt;/li>'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#list'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>template<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>This may work for smaller templates like the one above, but as you can imagine
+when you get into larger sets of nodes, it can become a real PITA to maintain.</p>
+<hr>
+<h3>The Options</h3>
+<p>I've been on the hunt for the past week or so looking for a nice javascript
+templating engine. In my search, I've come across plenty of great solutions such
+as <a href="http://handlebarsjs.com/">Handlebar.js</a>, <a href="https://mustache.github.io/">Mustache</a> and
+<a href="http://twitter.github.io/hogan.js/">Hogan.js</a> to name a few. I even found a really nice
+<a href="http://garann.github.io/template-chooser/">Javascript Template Chooser</a>.</p>
+<p>In addition, plenty of modern front-end frameworks already include templating
+as a feature (such as Angular.js, React.js and Underscore.js) but I was looking for something that was
+lightweight and focused more on separating the logic from the view. It made
+me wonder if there was a better way...in pure javascript to handle this problem.</p>
+<h3>Why Native?</h3>
+<p>Frameworks and plugins all come and go with the tide... but one thing that will
+remain is vanilla javascript (and most likely jQuery). A few years ago Mustache was all the rage.
+Now Handlebars.js is the new hot kid on the block ( <a href="https://bryce.fisher-fleig.org/blog/handlebars-considered-harmful/">a little Handlebars warning</a>
+). Why keep having to relearn (and rebuild)
+your projects everytime a new framework or plugin is released?</p>
+<h3>The Solution</h3>
+<p>I began researching if there were any native javascript template patterns floating around.
+I came across a pattern used in a Backbone.js example and one in a
+<a href="http://yuilibrary.com/yui/docs/app/app-todo.html">YUI Todo App</a> example referencing a
+javascript mime type called <code>type=&quot;x-template&quot;</code>. Take a look at the example below:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>my-template<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x-template<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span></code></pre>
+<p>By setting the mime type to <code>type=&quot;x-template&quot;</code>, the browser doesn't know how to handle
+the script...so it just ignores it. This is great because you can insert any HTML you want
+inside without the browser ever serving your code. Then, you can
+extract it later to generate HTML template snippets.</p>
+<p>As I stated above, the concatenation method is great for smaller templates and the
+method below may look like overkill... but when you are dealing with larger full page
+templates, this can really come in handy.</p>
+<p><strong>index.html</strong></p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">&lt;!--Our template placed somewhere in our HTML--></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>my-template<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x-template<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><br><span class="highlight-line">	<span class="token operator">&lt;</span>li<span class="token operator">></span></span><br><span class="highlight-line">		<span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"movie-name"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span></span><br><span class="highlight-line">		<span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"movie-rating"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span></span><br><span class="highlight-line">	<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span></span><br><span class="highlight-line"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span></code></pre>
+<p><strong>script.js</strong></p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Simple array of movies</span></span><br><span class="highlight-line"><span class="token keyword">var</span> movies <span class="token operator">=</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Inception"</span><span class="token punctuation">,</span> <span class="token string">"rating"</span><span class="token punctuation">:</span> <span class="token string">"4"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Goodfellas"</span><span class="token punctuation">,</span> <span class="token string">"rating"</span><span class="token punctuation">:</span> <span class="token string">"5"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span> <span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"Fight Club"</span><span class="token punctuation">,</span> <span class="token string">"rating"</span><span class="token punctuation">:</span> <span class="token string">"4"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Loop through the movie array and append each list item</span></span><br><span class="highlight-line">movies<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token comment">// Get the template HTML as a string</span></span><br><span class="highlight-line">	<span class="token keyword">var</span> template <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#my-template'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token comment">// Change the string literal into a jQuery object</span></span><br><span class="highlight-line">	<span class="token keyword">var</span> $template <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>template<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token comment">// Insert the data into the template</span></span><br><span class="highlight-line">	$template<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'.movie-name'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>movie<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	$template<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'.movie-rating'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>movie<span class="token punctuation">.</span>rating<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#list'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>$template<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<hr>
+<p><strong>Note:</strong> <em>The goal of this post was to use javascript templating without
+a template engine. I know I may get bashed for titling this post as a 'Native' solution
+when the solution above clearly is not so here is a vanilla javascript version.</em></p>
+<hr>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">movies<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    <span class="token keyword">var</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"my-template"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">,</span></span><br><span class="highlight-line">    	el <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    el<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> template<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    el<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">"movie-name"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> movie<span class="token punctuation">.</span>name<span class="token punctuation">;</span></span><br><span class="highlight-line">    el<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">"movie-rating"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">+=</span> movie<span class="token punctuation">.</span>rating<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"list"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2>Further Reading &amp; Resources</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/JavaScript_templates">Mozilla MDN - Javascript templates</a></li>
+<li><a href="http://ejohn.org/blog/javascript-micro-templating/">JavaScript Micro-Templating</a></li>
+<li><a href="http://garann.github.io/template-chooser/">Javascript Template Chooser</a></li>
+</ul>
+
+
+      <a href="/">← Home</a><br>
+      <p style="text-align:right">
+        <a class="edit-link" href="https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/./src/posts/2015-09-01-native-javascript-templating.md">Edit this page on GitHub</a>
+      </p>
+    </section>
+
+    <footer class="post-footer"></footer>
+    <div id="disqus_thread"></div>
+  </div>
+</article>
+
+<script>
+  var disqus_config = function () {
+    //this.page.url = document.location.href;
+    this.page.identifier = document.location.pathname.replace('/posts/', '').replace('/', '');
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cdianamedia.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </main>
+
+    <div class="footer">
+      <div class="email-signup">
+        <hr>
+        <div class="social-links-footer">
+          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fa fa-github"></i></a>
+          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fa fa-stack-overflow"></i></a>
+          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fa fa-dribbble"></i></a>
+          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
+        <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6a958cda028d0d312d1ef3ccd_02b3438a51" tabindex="-1" value=""></div>
+          <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button email-signup-button">Signup</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127054989-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-127054989-1');
+    </script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
