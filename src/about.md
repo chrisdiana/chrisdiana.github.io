@@ -35,6 +35,7 @@ If you would like to see some examples, please [reach out](/contact) and I'll fo
   font-weight: 100;
   line-height: 28px;
   font-size: 18px;
+  font-family: Georgia, Cambria, Times New Roman, Times, serifbody;
 }
 
 img.profile-pic {

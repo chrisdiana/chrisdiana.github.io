@@ -2,7 +2,7 @@
 
 	'use strict';
 
-	var mainContainer = document.querySelector('.container'),
+	var mainContainer = document.querySelector('.main'),
 		openCtrl = document.getElementById('btn-search'),
 		closeCtrl = document.getElementById('btn-search-close'),
 		searchContainer = document.querySelector('.search'),
@@ -115,7 +115,7 @@
 
 	function openSearch() {
     searchSuggestionList.innerHTML = '';
-		mainContainer.classList.add('container--move');
+		mainContainer.classList.add('main--move');
 		searchContainer.classList.add('search--open');
 		setTimeout(function() {
 			inputSearch.focus();
@@ -124,7 +124,7 @@
 	}
 
 	function closeSearch() {
-		mainContainer.classList.remove('container--move');
+		mainContainer.classList.remove('main--move');
 		searchContainer.classList.remove('search--open');
 		inputSearch.blur();
 		inputSearch.value = '';

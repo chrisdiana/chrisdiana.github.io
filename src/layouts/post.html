@@ -3,25 +3,34 @@ layout: default
 templateClass: tmpl-post
 ---
 <article class="post">
-  <section class="post-content">
-    <h1>{{ title }}</h1>
-    <!--
-    <span class="post-date">
-      {{ post.date | formatDate }}
-    </span>
-    -->
-    {% for tag in tags %}
-      <a class="tag tag-{{ tag }}" href="#">
-        {{ tag }}
-      </a>
-    {% endfor %}
+  <div class="noarticleimage">
 
-    {{ content | safe }}
+    <div class="post-meta">
+      <h1 class="post-title">{{ title }}</h1>
+      <!--
+      <span class="post-date">
+        {{ post.date | formatDate }}
+      </span>
+      -->
+      <div class="post-meta-text">
+        {% for tag in tags %}
+          <a class="tag tag-{{ tag }}" href="#">
+            {{ tag }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <section class="post-content">
 
-    <a href="{{ '/' | url }}">← Home</a><br>
-    <p style="text-align:right">
-      <a class="edit-link" href="https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/{{ page.inputPath }}">Edit this page on GitHub</a>
-    </p>
-  </section>
+      {{ content | safe }}
+
+      <a href="{{ '/' | url }}">← Home</a><br>
+      <p style="text-align:right">
+        <a class="edit-link" href="https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/{{ page.inputPath }}">Edit this page on GitHub</a>
+      </p>
+    </section>
+
+    <footer class="post-footer"></footer>
+  </div>
 </article>
 

@@ -13,14 +13,14 @@ title: Home
   <h1 class="subhead">Recent Posts</h1>
 
   {% for post in collections.latestPosts %}
-    <section class="post">
+    <article class="post">
       <div class="post-header">
         <h2 class="post-title">
           <a href="{{ post.url | url }}">
             {{ post.data.title }}
           </a>
         </h2>
-        <p class="post-meta">
+        <div class="post-meta-text">
           <span class="post-date">
             {{ post.date | formatDate }}
           </span>
@@ -29,12 +29,14 @@ title: Home
               {{ tag }}
             </a>
           {% endfor %}
-        </p>
+        </div>
       </div>
-      <div class="post-description">
-        <p>{{ post.data.excerpt }}</p>
-      </div>
-    </section>
+      <section class="post-content">
+        <div class="post-description">
+          <p>{{ post.data.excerpt }}</p>
+        </div>
+      </section>
+    </article>
   {% endfor %}
 </div>
 
@@ -48,5 +50,6 @@ title: Home
   font-weight: 100;
   line-height: 28px;
   font-size: 18px;
+  font-family: Georgia, Cambria, Times New Roman, Times, serifbody;
 }
 </style>
