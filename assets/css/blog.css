@@ -7,6 +7,9 @@ p {
   line-height: 33px;
   color: #333;
 }
+pre {
+  margin: 0.5em 0 2rem 0 !important;
+}
 .mini-banner {
     background: rgb(138,174,206);
     background-image: -webkit-gradient(linear,0% 0%,40% 100%,from(#7B417E),to(#91AECA));
@@ -17,7 +20,7 @@ p {
 }
 
 .main {
-  padding: 3.5rem 1.5rem;
+  padding: 3.5rem 1rem;
 	transition: transform 0.5s;
 }
 

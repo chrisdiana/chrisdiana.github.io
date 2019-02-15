@@ -26,19 +26,19 @@
     <meta property="og:image" content="" />
     <meta property="og:url" content="" >
     <meta property="og:type" content="blog" />
-    <meta property="article:published_time" content="2019-02-14">
+    <meta property="article:published_time" content="2019-02-15">
 
     <!-- CSS -->
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/medium-2.css">
     <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
-    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
     <link rel="stylesheet" href="/assets/css/blog.css">
   </head>
   <body>
@@ -53,7 +53,6 @@
           <ul class="nav-list">
             <li><a href="/">Blog</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
             <li><a href="#" id="btn-search" class="btn btn--search">
               <i class="sli icon-magnifier"></i></a>
             </li>
@@ -107,7 +106,7 @@
       <h1 class="post-title">Getting Started with Slim Framework - Part 2</h1>
       <!--
       <span class="post-date">
-        02-14-2019
+        02-15-2019
       </span>
       -->
       <div class="post-meta-text">
@@ -276,9 +275,9 @@ form using our <code>newCar()</code> method and reloads the car list using our <
 <pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Call delete car function when button is clicked</span></span><br><span class="highlight-line"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#btnDelete'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token function">deleteCar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
 <h3>9. Conclusion</h3>
 <p>Now if you visit you app, you should be able to add, delete, update and view your cars in your database. You
-can get a GIT staged step by step version of this post <a href="https://github.com/cdmedia/slim-cars-frontend">here on
+can get a GIT staged step by step version of this post <a href="https://github.com/chrisdiana/slim-cars-frontend">here on
 Github</a>.</p>
-<p><img src="https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/slim-frontend-api.png" alt="Slim DemoFrontend"></p>
+<p><img src="https://raw.githubusercontent.com/chrisdiana/slim-cars-frontend/master/screenshot.png" alt="Slim DemoFrontend"></p>
 
 
       <a href="/">← Home</a><br>
@@ -309,14 +308,16 @@ Github</a>.</p>
 
     </main>
 
+    <!-- Footer -->
     <div class="footer">
       <div class="email-signup">
         <hr>
         <div class="social-links-footer">
-          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fa fa-github"></i></a>
-          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fa fa-stack-overflow"></i></a>
-          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fa fa-dribbble"></i></a>
-          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fa fa-linkedin"></i></a>
+          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fab fa-github"></i></a>
+          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
+          <a target="_blank" title="NPM" href="//npmjs.com/~chris-diana"><i class="fab fa-npm"></i></a>
+          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
+          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
         </div>
         <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
         <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
