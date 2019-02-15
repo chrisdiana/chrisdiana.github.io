@@ -40,7 +40,7 @@ extract the Slim framework into your project directory.
 Login into MySQL and create a new database to have our Slim application interact
 with.
 
-```
+```sql
 CREATE DATABASE garage;
 USE garage;
 CREATE TABLE cars (
@@ -52,7 +52,7 @@ CREATE TABLE cars (
 
 Insert some sample data into the database.
 
-```
+```sql
 INSERT INTO cars (year, make, model) VALUES
 	(1991, 'Ferrari', 'Testarossa'),
 	(1994, 'Acura', 'NSX'),
@@ -66,7 +66,7 @@ that will make working with the database easier. Create a `plugins` folder in yo
 project directory and place the downloaded NotORM plugin inside it. Your directory
 should look like this:
 
-```
+```bash
 - .htaccess
 - index.php
 - Slim/
@@ -166,8 +166,8 @@ your browser, you should now see all the cars in the database as JSON.
 Alternatively , we can use cURL to test the GET request. Pull up your terminal
 and type:
 
-```
-curl -i -X GET http://localhost/slim-cars/cars
+```bash
+$ curl -i -X GET http://localhost/slim-cars/cars
 ```
 
 You should get a response similar to this:
@@ -219,8 +219,8 @@ doesn't exist, it returns an error message.
 
 Now let's test it out using cURL:
 
-```
-curl -i -X GET http://localhost/slim-cars/cars/1
+```bash
+$ curl -i -X GET http://localhost/slim-cars/cars/1
 ```
 
 You should get back:
@@ -254,8 +254,8 @@ $app->post('/car', function() use($app, $db){
 
 Let's use cURL to try adding a new car.
 
-```
-curl -X POST -d "year=1981&make=DeLorean&model=DMC-12" http://localhost/slim-cars/car
+```bash
+$ curl -X POST -d "year=1981&make=DeLorean&model=DMC-12" http://localhost/slim-cars/car
 ```
 
 If you log back into MySQL, you should now see your new car added to the database.
@@ -294,8 +294,8 @@ success message. If the car doesn't exist, well echo that the car doesn't exist.
 
 We can test this out using cURL PUT method in terminal:
 
-```
-curl -X PUT -d "year=2015&make=Lamborghini&model=700-4" http://localhost/slim-cars/car/3
+```bash
+$ curl -X PUT -d "year=2015&make=Lamborghini&model=700-4" http://localhost/slim-cars/car/3
 ```
 
 ### 11. Removing a Car
@@ -331,8 +331,8 @@ the car does not exist.
 
 We can test out this functionality using cURL DELETE:
 
-```
-curl -i -X DELETE http://localhost/slim-cars/car/4
+```bash
+$ curl -i -X DELETE http://localhost/slim-cars/car/4
 ```
 
 ### Conclusion
@@ -341,10 +341,10 @@ We'll there you have it, we have just built a RESTful application that can be us
 PUT and DELETE items from the database. This is a great starting point and can be
 expanded to include more methods, routes, and even authentication.
 
-You can download the source of this app in a step by step (in GIT) version on [Github](https://github.com/cdmedia/slim-cars).
+You can download the source of this app in a step by step (in GIT) version on [Github](https://github.com/chrisdiana/slim-cars).
 
 The next step in this tutorial is to create a client that will communicate with
-this REST API that we've just built - [Getting Started with Slim Framework - Part 2]({{url}}/2015/03/20/getting-started-with-slim-framework-pt-2/)
+this REST API that we've just built - [Getting Started with Slim Framework - Part 2](/posts/2015-03-20-getting-started-with-slim-framework-pt-2/)
 
 
 

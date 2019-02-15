@@ -475,8 +475,8 @@ $('#btnDelete').click(function() {
 
 Now if you visit you app, you should be able to add, delete, update and view your cars in your database. You
 can get a GIT staged step by step version of this post [here on
-Github](https://github.com/cdmedia/slim-cars-frontend).
+Github](https://github.com/chrisdiana/slim-cars-frontend).
 
 ![Slim Demo
-Frontend](https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/slim-frontend-api.png)
+Frontend](https://raw.githubusercontent.com/chrisdiana/slim-cars-frontend/master/screenshot.png)
 

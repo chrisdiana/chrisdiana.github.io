@@ -17,13 +17,13 @@ Here we are going to use SQLite with PHP using PHP's built in `PDO` function.
 Start off by moving to your project directory and then create a new SQLite
 database in terminal:
 
-```
-sqlite3 db.sqlite
+```bash
+$ sqlite3 db.sqlite
 ```
 
 SQLite will now open. Create a new database:
 
-```
+```sql
 CREATE TABLE garage(
 	id INTEGER PRIMARY KEY,
 	year INT(4) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE garage(
 Now type `.schema` to verify you table is created. You should see the database
 schema. Let's insert some values into the database:
 
-```
+```sql
 INSERT INTO garage(year, make, model) VALUES
     (1991, 'Ferrari', 'Testarossa'),
 	(1994, 'Acura', 'NSX'),
@@ -44,7 +44,7 @@ INSERT INTO garage(year, make, model) VALUES
 
 Finally, query the database to make sure all the values were inserted:
 
-```
+```sql
 SELECT * FROM garage;
 ```
 
@@ -59,12 +59,10 @@ PDO:
 
 {% highlight php startinline %}
 // General database query
-function dbQuery($sql)
+function dbQuery($sql, $params)
 {
 	// set PDO for SQLite
 	$db = new PDO("sqlite:db.sqlite");
-	// set the params to query
-	$params = ['year', 'make', 'model'];
 
 	// query the database using the sql from the parameter
 	foreach($db->query($sql) as $row)
@@ -96,7 +94,11 @@ add this:
 function getAllCars()
 {
 	$sql = "SELECT * FROM garage";
-	$cars = dbQuery($sql);
+
+	// set the params to query
+	$params = ['year', 'make', 'model'];
+
+	$cars = dbQuery($sql, $params);
 	return $cars;
 }
 {% endhighlight %}
@@ -136,5 +138,4 @@ $cars = getCarsByParam('year', '1991');
 var_dump($cars);
 {% endhighlight %}
 
-That about wraps it up for a nice intro to using PHP with SQLite. Make sure to take a look at the [links](http://codoki.github.io/links/) page
-for further reading and resources.
+That about wraps it up for a nice intro to using PHP with SQLite.

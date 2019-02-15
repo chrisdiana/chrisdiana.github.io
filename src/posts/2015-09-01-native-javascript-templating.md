@@ -3,13 +3,11 @@ layout: post
 title: Native Javascript Templating - Goodbye Handlebars
 excerpt: Ditch your javascript template plugin for a native javascript template solution you can use in your next app.
 comments: true
-tags: [javascript, jquery]
+tags: [javascript, templates, vanilla js]
 ---
 
 Ditch your javascript template plugin for a native javascript template solution
 you can use in your next app.
-
-
 
 ### Why Javascript Templates?
 
@@ -35,7 +33,7 @@ movies.forEach(function(movie) {
 
 	var template = '<li><span class="movie-name">' + movie.name + '</span><span class="movie-rating">' + movie.rating + '</span></li>';
 
-	$('#list').append(template);
+  document.getElementById('list').appendChild(template);
 
 });
 
@@ -62,7 +60,7 @@ me wonder if there was a better way...in pure javascript to handle this problem.
 ### Why Native?
 
 Frameworks and plugins all come and go with the tide... but one thing that will
-remain is vanilla javascript (and most likely jQuery). A few years ago Mustache was all the rage.
+remain is vanilla javascript. A few years ago Mustache was all the rage.
 Now Handlebars.js is the new hot kid on the block ( [a little Handlebars warning](https://bryce.fisher-fleig.org/blog/handlebars-considered-harmful/)
 ). Why keep having to relearn (and rebuild)
 your projects everytime a new framework or plugin is released?
@@ -114,36 +112,8 @@ var movies = [
 // Loop through the movie array and append each list item
 movies.forEach(function(movie) {
 
-	// Get the template HTML as a string
-	var template = $('#my-template').html();
-
-	// Change the string literal into a jQuery object
-	var $template = $(template);
-
-	// Insert the data into the template
-	$template.find('.movie-name').text(movie.name);
-	$template.find('.movie-rating').text(movie.rating);
-
-	$('#list').append($template);
-});
-
-{% endhighlight %}
-
-
----
-
-**Note:** *The goal of this post was to use javascript templating without
-a template engine. I know I may get bashed for titling this post as a 'Native' solution
-when the solution above clearly is not so here is a vanilla javascript version.*
-
----
-
-{% highlight js %}
-
-movies.forEach(function(movie) {
-
     var template = document.getElementById("my-template").innerHTML,
-    	el = document.createElement('div');
+    	el = document.createElement('li');
 
     el.innerHTML = template;
 
@@ -155,10 +125,10 @@ movies.forEach(function(movie) {
 
 {% endhighlight %}
 
+---
+
 ## Further Reading & Resources
 
 * [Mozilla MDN - Javascript templates](https://developer.mozilla.org/en-US/docs/JavaScript_templates)
 * [JavaScript Micro-Templating](http://ejohn.org/blog/javascript-micro-templating/)
 * [Javascript Template Chooser](http://garann.github.io/template-chooser/)
-
-
