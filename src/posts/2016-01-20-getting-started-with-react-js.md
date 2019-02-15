@@ -3,18 +3,13 @@ layout: post
 title: Getting Started with React.js - Concepts and Creating Your First App
 excerpt: React.js is all the rage these days...and there's good reason. Here's a quick tutorial to get you up and running with this great JS framework.
 comments: true
-tags: [javascript, react.js, virtual dom, jsx, flux]
----
-
-React.js is all the rage these days...and there's good reason. Here's a quick
-tutorial to get you up and running with this great JS framework.
-
+tags: [javascript, react.js, virtual dom, jsx, flux, redux]
 ---
 
 ## What is React.js?
 
-React.js is a Javascript library used for creating User Interfaces released by the creators of Facebook.
-React was built to solve one huge problem that anyone who has used Javascript extensively has come across at one point or another:
+React.js is a JavaScript library used for creating User Interfaces released by the creators of Facebook.
+React was built to solve one huge problem that anyone who has ever used JavaScript extensively has come across at one point or another:
 
 >Building applications with data that changes over time
 
@@ -42,14 +37,12 @@ Because of this, React can quickly diff *(check for differences)* the current st
 ---
 
 ## Terms to Know
-
+Here are some terms that will be helpful in navigating the React ecosystem.
 
 **Virtual DOM**
 
 An in-memory representation of the DOM. React manipulates this in order to
 quickly diff the current state of the UI.
-
----
 
 **JSX**
 
@@ -87,8 +80,6 @@ render: function() {
 }
 {% endhighlight %}
 
----
-
 **Flux**
 
 *Flux* or *Flux Architecture* is a concept/pattern, not a library or framework. The Flux pattern utilizes unidirectional reactive data flow as seen below.
@@ -104,8 +95,6 @@ This chart may look a bit confusing so let's break it down:
 
 This type of pattern is designed to guarantee your stores/models always have the right data.
 
----
-
 **React.js**
 
 This is the actual Javascript library. React's code is structured in a Flux pattern (as described above). There are 3 main concepts that makeup React:
@@ -113,8 +102,6 @@ This is the actual Javascript library. React's code is structured in a Flux patt
 1. Components
 2. Properties
 3. State
-
----
 
 **React Components**
 
@@ -140,8 +127,6 @@ React.renderComponent(
 );
 {% endhighlight %}
 
----
-
 **React Properties**
 
 Properties are to React components what attributes are to HTML elements. We can change the behavior based on external information
@@ -161,8 +146,6 @@ React.renderComponent(
   document.body
 );
 {% endhighlight %}
-
----
 
 **React State**
 
@@ -199,6 +182,11 @@ React.renderComponent(
 );
 {% endhighlight %}
 
+**Redux**
+
+While Flux is the architectural pattern React follows, Redux is a library that gives you tools
+to aid in the implimentation of the Flux pattern.
+
 ---
 
 
@@ -234,8 +222,6 @@ Let's start off with this basic HTML boilerplate:
 {% endhighlight %}
 
 Notice the "text/babel" instead of "text/javascript" in the link to the `script.js` which we are using. Babel is the Javascript complier we are using to allow us to write in JSX instead of plain Javascript. Now that the foundation is set, let's get to the React code. Create a file called `script.js` and open that open. The rest of the following code will be going into this file.
-
----
 
 **2. Our First React Component**
 
@@ -368,9 +354,10 @@ ReactDOM.render(
 And there we have it! Our first React app. Once you get your head around all the terminology and concepts,
 React is an incredible tool for both large and small applications.
 
-You can download the full annotated code for this tutorial [here on Github](https://github.com/codoki/react-todo)
-
-![React Todo App Demo Screenshot](https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/react-todo.png)
+<!--
+You can download the full annotated code for this tutorial [here on Github](react-todo)
+![React Todo App Demo Screenshot](/public/img/tuts/react-todo.png)
+-->
 
 ---
 
@@ -422,9 +409,7 @@ Take a deeper look [here](http://facebook.github.io/react-native/docs/getting-st
 * [React for Stupid People](http://blog.andrewray.me/reactjs-for-stupid-people/)
 * [React Tutorials](https://medium.com/react-tutorials)
 
----
 
-Suggestions or edits? Feel free to submit a pull request with your
-edit on [Github](https://github.com/codoki/codoki.github.io/tree/master/_posts)
+Suggestions or edits? Feel free to submit a pull request on [Github](https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/src/posts).
 
 
