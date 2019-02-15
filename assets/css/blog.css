@@ -299,7 +299,10 @@ a.edit-link:hover {
   color: #52abff;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 900px) {
+  .navbar {
+    left: 0;
+  }
 }
 
 
