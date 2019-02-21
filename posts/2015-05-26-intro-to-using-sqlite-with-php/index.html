@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
     <title>Intro to using SQLite with PHP | Chris Diana</title>
 
@@ -18,14 +19,26 @@
     <!-- RSS -->
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Diana">
 
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Chris Diana" />
+    <meta property="og:title" content="Intro to using SQLite with PHP"/>
+    <meta property="og:description" content="Learn to use SQLite, a serverless, configuration-free and reliable database engine used on everything from iPods to Mobile apps." />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://chris-diana.com/posts/2015-05-26-intro-to-using-sqlite-with-php/" >
+    <meta property="og:type" content="blog" />
+    <meta property="article:published_time" content="2019-02-21">
+
     <!-- CSS -->
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/assets/css/medium.css">
     <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/medium-2.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
     <link rel="stylesheet" href="/assets/css/blog.css">
   </head>
   <body>
@@ -38,19 +51,79 @@
         </a>
         <div id="nav-content" class="nav-content">
           <ul class="nav-list">
-            <li><a href="/">Blog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/posts">Blog</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="#" id="btn-search" class="btn btn--search">
+              <i class="sli icon-magnifier"></i></a>
+            </li>
           </ul>
         </div>
       </nav>
     </div>
 
-    <!-- MAIN -->
-    <div class="container">
-      <h1>Intro to using SQLite with PHP</h1>
+    <div class="search">
+      <a href="#" id="btn-search-close" class="btn btn--search-close">
+        <i class="sli icon-close"></i>
+      </a>
+			<form class="search__form" action="">
+				<input
+          id="search"
+          class="search__input"
+          name="search"
+          type="search"
+          placeholder=""
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false" />
+				<span class="search__info">Hit enter to search or ESC to close</span>
+			</form>
 
-<p>SQLite is a serverless, configuration-free and reliable database engine used on
+      <div class="search-suggestions">
+        <div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+        </div>
+      </div>
+      <!--
+			<div class="search__related">
+				<div class="search__suggestion">
+          <h3>May I Suggest?</h3>
+          <p>#javascript #react #d3 #php</p>
+				</div>
+				<div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+				</div>
+			</div>
+      -->
+		</div>
+
+    <!-- MAIN -->
+    <main class="content main">
+      <article class="post">
+  <div class="noarticleimage">
+
+    <div class="post-meta">
+      <h1 class="post-title">Intro to using SQLite with PHP</h1>
+      <!--
+      <span class="post-date">
+        02-21-2019
+      </span>
+      -->
+      <div class="post-meta-text">
+        
+          <a class="tag tag-sqlite" href="#">
+            sqlite
+          </a>
+        
+          <a class="tag tag-php" href="#">
+            php
+          </a>
+        
+      </div>
+    </div>
+    <section class="post-content">
+
+      <p>SQLite is a serverless, configuration-free and reliable database engine used on
 everything from iPods to Mobile apps. It can also be used for small web
 applications as well. With SQLite, you can get an application up and running
 without worrying about a full blown MySQL or PostgreSQL server install...and
@@ -58,38 +131,26 @@ best of all it can be easily backed up or put into version control.</p>
 <p>Here we are going to use SQLite with PHP using PHP's built in <code>PDO</code> function.</p>
 <p>Start off by moving to your project directory and then create a new SQLite
 database in terminal:</p>
-<pre><code>sqlite3 db.sqlite
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">$ sqlite3 db.sqlite</span></code></pre>
 <p>SQLite will now open. Create a new database:</p>
-<pre><code>CREATE TABLE garage(
-	id INTEGER PRIMARY KEY,
-	year INT(4) NOT NULL,
-	make VARCHAR(255) NOT NULL,
-	model VARCHAR(255) NOT NULL
-);
-</code></pre>
+<pre class="language-sql"><code class="language-sql"><span class="highlight-line"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> garage<span class="token punctuation">(</span></span><br><span class="highlight-line">	id <span class="token keyword">INTEGER</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token keyword">year</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	make <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	model <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
 <p>Now type <code>.schema</code> to verify you table is created. You should see the database
 schema. Let's insert some values into the database:</p>
-<pre><code>INSERT INTO garage(year, make, model) VALUES
-    (1991, 'Ferrari', 'Testarossa'),
-	(1994, 'Acura', 'NSX'),
-	(1992, 'Toyota', 'Corolla');
-</code></pre>
+<pre class="language-sql"><code class="language-sql"><span class="highlight-line"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> garage<span class="token punctuation">(</span><span class="token keyword">year</span><span class="token punctuation">,</span> make<span class="token punctuation">,</span> model<span class="token punctuation">)</span> <span class="token keyword">VALUES</span></span><br><span class="highlight-line">    <span class="token punctuation">(</span><span class="token number">1991</span><span class="token punctuation">,</span> <span class="token string">'Ferrari'</span><span class="token punctuation">,</span> <span class="token string">'Testarossa'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token punctuation">(</span><span class="token number">1994</span><span class="token punctuation">,</span> <span class="token string">'Acura'</span><span class="token punctuation">,</span> <span class="token string">'NSX'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	<span class="token punctuation">(</span><span class="token number">1992</span><span class="token punctuation">,</span> <span class="token string">'Toyota'</span><span class="token punctuation">,</span> <span class="token string">'Corolla'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
 <p>Finally, query the database to make sure all the values were inserted:</p>
-<pre><code>SELECT * FROM garage;
-</code></pre>
+<pre class="language-sql"><code class="language-sql"><span class="highlight-line"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> garage<span class="token punctuation">;</span></span></code></pre>
 <p>Exit SQLite using the <code>.exit</code> command. You should now see the <code>db.sqlite</code> file
 created in your current working directory.</p>
 <h4>Selecting data from SQLite in PHP</h4>
 <p>Now we are going to select some data from the SQLite database using PHP's built
 in PDO function. Create a new PHP file and use this function to connect using
 PDO:</p>
-<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token comment">// General database query</span></span><br><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">dbQuery</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token comment">// set PDO for SQLite</span></span><br><span class="highlight-line">	<span class="token variable">$db</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"sqlite:db.sqlite"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token comment">// set the params to query</span></span><br><span class="highlight-line">	<span class="token variable">$params</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'year'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'make'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'model'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token comment">// query the database using the sql from the parameter</span></span><br><span class="highlight-line">	<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$db</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token variable">$row</span><span class="token punctuation">)</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token comment">// loop through the parameters given in the function</span></span><br><span class="highlight-line">		<span class="token comment">// to only get those with the right key</span></span><br><span class="highlight-line">		<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$params</span> <span class="token keyword">as</span> <span class="token variable">$param</span><span class="token punctuation">)</span></span><br><span class="highlight-line">		<span class="token punctuation">{</span></span><br><span class="highlight-line">			<span class="token variable">$objectParams</span><span class="token punctuation">[</span><span class="token variable">$param</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token variable">$param</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line">		<span class="token punctuation">}</span></span><br><span class="highlight-line">		<span class="token comment">// store the object params in an objects array</span></span><br><span class="highlight-line">		<span class="token variable">$objects</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$objectParams</span><span class="token punctuation">;</span></span><br><span class="highlight-line">		<span class="token comment">// clear out the params array for next loop</span></span><br><span class="highlight-line">		<span class="token variable">$objectParams</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span></span><br><span class="highlight-line">	<span class="token variable">$db</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token variable">$objects</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token comment">// General database query</span></span><br><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">dbQuery</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">,</span> <span class="token variable">$params</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token comment">// set PDO for SQLite</span></span><br><span class="highlight-line">	<span class="token variable">$db</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token double-quoted-string string">"sqlite:db.sqlite"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token comment">// query the database using the sql from the parameter</span></span><br><span class="highlight-line">	<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$db</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token variable">$row</span><span class="token punctuation">)</span></span><br><span class="highlight-line">	<span class="token punctuation">{</span></span><br><span class="highlight-line">		<span class="token comment">// loop through the parameters given in the function</span></span><br><span class="highlight-line">		<span class="token comment">// to only get those with the right key</span></span><br><span class="highlight-line">		<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$params</span> <span class="token keyword">as</span> <span class="token variable">$param</span><span class="token punctuation">)</span></span><br><span class="highlight-line">		<span class="token punctuation">{</span></span><br><span class="highlight-line">			<span class="token variable">$objectParams</span><span class="token punctuation">[</span><span class="token variable">$param</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token variable">$param</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line">		<span class="token punctuation">}</span></span><br><span class="highlight-line">		<span class="token comment">// store the object params in an objects array</span></span><br><span class="highlight-line">		<span class="token variable">$objects</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$objectParams</span><span class="token punctuation">;</span></span><br><span class="highlight-line">		<span class="token comment">// clear out the params array for next loop</span></span><br><span class="highlight-line">		<span class="token variable">$objectParams</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token punctuation">}</span></span><br><span class="highlight-line">	<span class="token variable">$db</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token variable">$objects</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 <p>You can read through the comments of the function to see how it all works, but basically what happens
 here is the function queries the database and loops through looking for the specified parameters.</p>
 <p>Next, lets create a function that will get all the cars in the database. Just below the <code>dbQuery</code> function,
 add this:</p>
-<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">getAllCars</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token double-quoted-string string">"SELECT * FROM garage"</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token variable">$cars</span> <span class="token operator">=</span> <span class="token function">dbQuery</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token variable">$cars</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">getAllCars</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token double-quoted-string string">"SELECT * FROM garage"</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token comment">// set the params to query</span></span><br><span class="highlight-line">	<span class="token variable">$params</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'year'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'make'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'model'</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">	<span class="token variable">$cars</span> <span class="token operator">=</span> <span class="token function">dbQuery</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">,</span> <span class="token variable">$params</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">	<span class="token keyword">return</span> <span class="token variable">$cars</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 <p>Here we are calling our <code>dbQuery</code> function using the select all statement as our function parameter. Now
 if we add this just below our <code>getAllCars</code> function and run the PHP file, the output should show all the
 cars in the database:</p>
@@ -99,18 +160,49 @@ cars in the database:</p>
 <p>Here we will be searching the database for a term like the <code>$search</code> term and a param like the <code>$param</code>. Add this
 below the <code>getCarsByParam</code> function to test it out:</p>
 <pre class="language-php"><code class="language-php"><span class="highlight-line"><span class="token variable">$cars</span> <span class="token operator">=</span> <span class="token function">getCarsByParam</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'year'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'1991'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token function">var_dump</span><span class="token punctuation">(</span><span class="token variable">$cars</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
-<p>That about wraps it up for a nice intro to using PHP with SQLite. Make sure to take a look at the <a href="http://codoki.github.io/links/">links</a> page
-for further reading and resources.</p>
+<p>That about wraps it up for a nice intro to using PHP with SQLite.</p>
 
 
-<p><a href="/">← Home</a></p>
+      <a href="/">← Home</a><br>
+      <p style="text-align:right">
+        <a class="edit-link" href="https://github.com/chrisdiana/chrisdiana.github.io/tree/develop/./src/posts/2015-05-26-intro-to-using-sqlite-with-php.md">Edit this page on GitHub</a>
+      </p>
+    </section>
 
-    </div>
+    <footer class="post-footer"></footer>
+    <div id="disqus_thread"></div>
+  </div>
+</article>
 
+<script>
+  var disqus_config = function () {
+    //this.page.url = document.location.href;
+    this.page.identifier = document.location.pathname.replace('/posts/', '').replace('/', '');
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://cdianamedia.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </main>
+
+    <!-- Footer -->
     <div class="footer">
       <div class="email-signup">
         <hr>
-        <div class="email-signup-header">Sign up for updates on the latest posts, tutorials and more.</div>
+        <div class="social-links-footer">
+          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fab fa-github"></i></a>
+          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
+          <a target="_blank" title="NPM" href="//npmjs.com/~chrisdiana"><i class="fab fa-npm"></i></a>
+          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
+          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
         <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
           <div id="mce-responses" class="clear">

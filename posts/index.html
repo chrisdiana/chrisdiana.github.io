@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
     <title>Posts | Chris Diana</title>
 
@@ -18,14 +19,26 @@
     <!-- RSS -->
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Diana">
 
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Chris Diana" />
+    <meta property="og:title" content="Posts"/>
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://chris-diana.com/posts/" >
+    <meta property="og:type" content="blog" />
+    <meta property="article:published_time" content="2019-02-21">
+
     <!-- CSS -->
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/assets/css/medium.css">
     <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/medium-2.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
     <link rel="stylesheet" href="/assets/css/blog.css">
   </head>
   <body>
@@ -38,113 +51,260 @@
         </a>
         <div id="nav-content" class="nav-content">
           <ul class="nav-list">
-            <li><a href="/">Blog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/posts">Blog</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="#" id="btn-search" class="btn btn--search">
+              <i class="sli icon-magnifier"></i></a>
+            </li>
           </ul>
         </div>
       </nav>
     </div>
 
+    <div class="search">
+      <a href="#" id="btn-search-close" class="btn btn--search-close">
+        <i class="sli icon-close"></i>
+      </a>
+			<form class="search__form" action="">
+				<input
+          id="search"
+          class="search__input"
+          name="search"
+          type="search"
+          placeholder=""
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false" />
+				<span class="search__info">Hit enter to search or ESC to close</span>
+			</form>
+
+      <div class="search-suggestions">
+        <div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+        </div>
+      </div>
+      <!--
+			<div class="search__related">
+				<div class="search__suggestion">
+          <h3>May I Suggest?</h3>
+          <p>#javascript #react #d3 #php</p>
+				</div>
+				<div class="search__suggestion">
+          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+				</div>
+			</div>
+      -->
+		</div>
+
     <!-- MAIN -->
-    <div class="container">
+    <main class="content main">
       
 <div class="posts" id="posts">
   <h1 class="subhead">All Posts</h1>
 
   
-    <section class="post">
+    <article class="post">
       <div class="post-header">
         <h2 class="post-title">
-          <a href="/posts/2017-12-10-getting-started-with-react-js/">
+          <a href="/posts/2016-01-20-getting-started-with-react-js/">
             Getting Started with React.js - Concepts and Creating Your First App
           </a>
         </h2>
-        <p class="post-meta">
+        <div class="post-meta-text">
           <span class="post-date">
-            2017-12-10
+            01-20-2016
           </span>
           
-            <a class="post-tag post-tag-javascript" href="#">
+            <a class="tag tag-javascript" href="#">
               javascript
             </a>
           
-            <a class="post-tag post-tag-react.js" href="#">
+            <a class="tag tag-react.js" href="#">
               react.js
             </a>
           
-            <a class="post-tag post-tag-virtual dom" href="#">
+            <a class="tag tag-virtual dom" href="#">
               virtual dom
             </a>
           
-            <a class="post-tag post-tag-jsx" href="#">
+            <a class="tag tag-jsx" href="#">
               jsx
             </a>
           
-            <a class="post-tag post-tag-flux" href="#">
+            <a class="tag tag-flux" href="#">
               flux
             </a>
           
-        </p>
+            <a class="tag tag-redux" href="#">
+              redux
+            </a>
+          
+        </div>
       </div>
-      <div class="post-description">
-        <p></p>
-      </div>
-    </section>
+      <section class="post-content">
+        <div class="post-description">
+          <p>React.js is all the rage these days...and there's good reason. Here's a quick tutorial to get you up and running with this great JS framework.</p>
+        </div>
+      </section>
+    </article>
   
-    <section class="post">
+    <article class="post">
       <div class="post-header">
         <h2 class="post-title">
-          <a href="/posts/2016-02-10-human-readable-time-in-javascript/">
-            Human Readable Time in JavaScript
+          <a href="/posts/2015-09-01-native-javascript-templating/">
+            Native Javascript Templating - Goodbye Handlebars
           </a>
         </h2>
-        <p class="post-meta">
+        <div class="post-meta-text">
           <span class="post-date">
-            2016-02-10
+            09-01-2015
           </span>
           
-            <a class="post-tag post-tag-javascript" href="#">
+            <a class="tag tag-javascript" href="#">
               javascript
             </a>
           
-        </p>
+            <a class="tag tag-templates" href="#">
+              templates
+            </a>
+          
+            <a class="tag tag-vanilla js" href="#">
+              vanilla js
+            </a>
+          
+        </div>
       </div>
-      <div class="post-description">
-        <p>This example below shows how to convert milliseconds to human readable time in JavaScript.</p>
-      </div>
-    </section>
+      <section class="post-content">
+        <div class="post-description">
+          <p>Ditch your javascript template plugin for a native javascript template solution you can use in your next app.</p>
+        </div>
+      </section>
+    </article>
   
-    <section class="post">
+    <article class="post">
       <div class="post-header">
         <h2 class="post-title">
           <a href="/posts/2015-05-26-intro-to-using-sqlite-with-php/">
             Intro to using SQLite with PHP
           </a>
         </h2>
-        <p class="post-meta">
+        <div class="post-meta-text">
           <span class="post-date">
-            2015-05-26
+            05-26-2015
           </span>
           
-            <a class="post-tag post-tag-sqlite" href="#">
+            <a class="tag tag-sqlite" href="#">
               sqlite
             </a>
           
-        </p>
+            <a class="tag tag-php" href="#">
+              php
+            </a>
+          
+        </div>
       </div>
-      <div class="post-description">
-        <p></p>
+      <section class="post-content">
+        <div class="post-description">
+          <p>Learn to use SQLite, a serverless, configuration-free and reliable database engine used on everything from iPods to Mobile apps.</p>
+        </div>
+      </section>
+    </article>
+  
+    <article class="post">
+      <div class="post-header">
+        <h2 class="post-title">
+          <a href="/posts/2015-03-20-getting-started-with-slim-framework-pt-2/">
+            Getting Started with Slim Framework - Part 2
+          </a>
+        </h2>
+        <div class="post-meta-text">
+          <span class="post-date">
+            03-20-2015
+          </span>
+          
+            <a class="tag tag-slim" href="#">
+              slim
+            </a>
+          
+            <a class="tag tag-rest" href="#">
+              rest
+            </a>
+          
+            <a class="tag tag-api" href="#">
+              api
+            </a>
+          
+        </div>
       </div>
-    </section>
+      <section class="post-content">
+        <div class="post-description">
+          <p>This is part 2 of the Getting Started with Slim Framework tutorial in which we will build a frontend interface to access our API.</p>
+        </div>
+      </section>
+    </article>
+  
+    <article class="post">
+      <div class="post-header">
+        <h2 class="post-title">
+          <a href="/posts/2015-01-27-getting-started-with-slim-framework/">
+            Getting Started with Slim Framework - Creating a RESTful API
+          </a>
+        </h2>
+        <div class="post-meta-text">
+          <span class="post-date">
+            01-27-2015
+          </span>
+          
+            <a class="tag tag-php" href="#">
+              php
+            </a>
+          
+            <a class="tag tag-framework" href="#">
+              framework
+            </a>
+          
+            <a class="tag tag-mvc" href="#">
+              mvc
+            </a>
+          
+            <a class="tag tag-rest" href="#">
+              rest
+            </a>
+          
+            <a class="tag tag-api" href="#">
+              api
+            </a>
+          
+            <a class="tag tag-slim" href="#">
+              slim
+            </a>
+          
+        </div>
+      </div>
+      <section class="post-content">
+        <div class="post-description">
+          <p>Here's a quick tutorial to get up and running with Slim PHP Framework to start building RESTful applications.</p>
+        </div>
+      </section>
+    </article>
   
 </div>
-    </div>
 
+    </main>
+
+    <!-- Footer -->
     <div class="footer">
       <div class="email-signup">
         <hr>
-        <div class="email-signup-header">Sign up for updates on the latest posts, tutorials and more.</div>
+        <div class="social-links-footer">
+          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fab fa-github"></i></a>
+          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
+          <a target="_blank" title="NPM" href="//npmjs.com/~chrisdiana"><i class="fab fa-npm"></i></a>
+          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
+          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
         <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
           <div id="mce-responses" class="clear">
