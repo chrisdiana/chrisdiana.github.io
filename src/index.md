@@ -21,7 +21,7 @@ really cool projects. Here are a few of the great companies I've gotten the oppo
 ![Clients Logos](/assets/img/companies.png)
 
 Because of the nature of business that many of clients I've worked with are in, I am not able to display some my work on this site.
-If you would like to see some examples, please [reach out](/contact) and I'll send over a few!
+If you would like to see some examples, please [reach out](:mailto=cdiana.media@gmail.com) and I'll send over a few!
 
 Check out some of my current [open source projects here](https://github.com/chrisdiana).
 
