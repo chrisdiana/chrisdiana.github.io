@@ -5,166 +5,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
-    <title>Home | Chris Diana</title>
+    <title>Chris Diana // Developer & Designer</title>
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
-    <link rel="manifest" href="/assets/img/icons/site.webmanifest">
-    <link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- RSS -->
-    <!-- <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Chris Diana"> -->
-
     <!-- OpenGraph -->
     <meta property="og:site_name" content="Chris Diana" />
-    <meta property="og:title" content="Home"/>
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="https://chris-diana.com/" >
+    <meta property="og:title" content="Home" />
+    <meta property="og:description" content="Hello, my name is Chris Diana! I am a developer and designer currently based in Boulder, CO." />
+    <meta property="og:image" content="/img/icons/favicon-32x32.png" />
+    <meta property="og:url" content="https://chrisdiana.dev/" />
     <meta property="og:type" content="blog" />
-    <meta property="article:published_time" content="2019-03-16">
+    <meta property="article:published_time" content="2019-03-16" />
 
     <!-- CSS -->
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="//unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="/style.css">
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/assets/css/prism-base16-monokai.dark.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/medium-2.css">
-    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
-    <link rel="stylesheet" href="/assets/css/blog.css">
   </head>
   <body>
-    <div class="mini-banner"></div>
 
-    <div id="navbar" class="navbar">
-      <nav class="nav">
-        <a id="logo" href="#" class="logo">
-          <img src="/assets/img/logo.png"/>
-        </a>
-        <div id="nav-content" class="nav-content">
-          <ul class="nav-list">
-            <li><a href="/posts">Blog</a></li>
-            <li><a href="/">About</a></li>
-            <li><a href="#" id="btn-search" class="btn btn--search">
-              <i class="sli icon-magnifier"></i></a>
-            </li>
-          </ul>
+    <header class="navbar">
+      <section class="navbar-section">
+        <img src="/img/logo.png" class="brand" />
+      </section>
+    </header>
+    
+    <main>
+      <section id="intro">
+        <div class="columns">
+          <div class="column">
+            <div class="hero">
+              <div class="hero-body">
+                <p>Hello, I'm Chris Diana.</p>
+                <p>
+                  I am a developer &amp; designer with a passion for innovative
+                  technology based in Boulder, CO.
+                </p>
+                <p>
+                  By day, I lead the innovation software development team at PenLink where we quickly prototype
+                  and validate scalable machine learning, data visualization, and analytics applications. 
+                  In my freetime, I enjoy experimenting with the latest web technologies and sharing what I learn.
+                </p>    
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-    </div>
+      </section>
 
-    <div class="search">
-      <a href="#" id="btn-search-close" class="btn btn--search-close">
-        <i class="sli icon-close"></i>
-      </a>
-			<form class="search__form" action="">
-				<input
-          id="search"
-          class="search__input"
-          name="search"
-          type="search"
-          placeholder=""
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false" />
-				<span class="search__info">Hit enter to search or ESC to close</span>
-			</form>
-
-      <div class="search-suggestions">
-        <div class="search__suggestion">
-          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
+      <section id="work">
+        <h3>Work</h3>
+        <div class="columns mt-3">
+          <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/5253468" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/5253468/automatefitness-full.jpg">
+              </a>
+          </div>
+          <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/5260423" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/5260423/pghcares.jpg">
+              </a>
+          </div>
+          <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/6199222" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/6199222/screen_shot_2019-03-18_at_16.59.30-fullpage_4x.png">
+            </a>
+          </div>
+           <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/4670169" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/4670169/ramenbar.jpg">
+            </a>
+          </div>
         </div>
-      </div>
-      <!--
-			<div class="search__related">
-				<div class="search__suggestion">
-          <h3>May I Suggest?</h3>
-          <p>#javascript #react #d3 #php</p>
-				</div>
-				<div class="search__suggestion">
-          <ul id="search-suggestion-list" class="search__suggestion__list"></ul>
-				</div>
-			</div>
-      -->
-		</div>
+        <div class="columns mt-3">
+          <div class="column col-4 col-xs-12">
+            <a href="https://dribbble.com/shots/6198120" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/6198120/vis.gif">
+              </a>
+          </div>
+          <div class="column col-4 col-xs-12">
+            <a href="https://dribbble.com/shots/6198114" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif">
+              </a>
+          </div>
+          <div class="column col-4 col-xs-12">
+            <a href="https://dribbble.com/shots/6198129" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/6198129/cluster.gif">
+            </a>
+          </div>
+        </div>
+        <div class="columns mt-3">
+          <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/5263724" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/5263724/truckduty-full.jpg">
+              </a>
+          </div>
+          <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/5263598" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg">
+              </a>
+          </div>
+          <div class="column col-3 col-xs-12">
+            <a href="https://dribbble.com/shots/4610070" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/4610070/loclii-full.jpg">
+              </a>
+          </div>
+           <div class="column col-3 col-xs-12">
+             <a href="https://dribbble.com/shots/4670177" target="_blank">
+              <img 
+                class="lazy img-fit-contain img-responsive" 
+                src="/img/placeholder.png"
+                data-src="https://cdn.dribbble.com/users/84464/screenshots/4670177/bigdataai.jpg">
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <!-- MAIN -->
-    <main class="content main">
-      <img class="profile-pic" src="/assets/img/chris.png" />
-<div class="message">
-  <i class="fa fa-quote-left"></i>
-  Hello, my name is Chris Diana!
-  I am a developer &amp; designer with a passion for innovative technology based in Boulder, CO.
-</div>
-<p>By day, I lead the innovation software development team at PenLink
-where we quickly prototype, develop and validate scalable, machine learning applications.
-In my freetime, I enjoy experimenting with the latest web technologies and sharing what I learn.</p>
-<p>Over the years, I’ve had the pleasure to work with some really great people and companies on some
-really cool projects. Here are a few of the great companies I've gotten the opportunity to work with:</p>
-<p><img src="/assets/img/companies.png" alt="Clients Logos"></p>
-<p>Because of the nature of business that many of clients I've worked with are in, I am not able to display some my work on this site.
-If you would like to see some examples, please <a href="mailto:cdiana.media@gmail.com">reach out</a> and I'll send over a few!</p>
-<p>Check out some of my current <a href="https://github.com/chrisdiana">open source projects here</a>.</p>
-<style>
-.message {
-  padding: 30px;
-  background: #f7f7f7;
-  font-style: italic;
-  color: #999;
-  font-weight: 100;
-  line-height: 28px;
-  font-size: 18px;
-  font-family: Georgia, Cambria, Times New Roman, Times, serifbody;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-}
+      <div class="divider"></div>
 
-img.profile-pic {
-  padding: 0;
-  margin: -15px 0;
-  max-width: 125px;
-  float: right;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  border-radius: 200px;
-  border: 1px solid #c8c8c8;
-}
-</style>
+      <section id="open-source">
+        <h4>Open Source</h4>
+        <dl>
+          <dt>
+            <a href="https://github.com/chrisdiana/cms.js" target="_blank">CMS.js</a>
+          </dt>
+          <dd>
+            A fully Client-side JavaScript Markdown Site generator in the spirit of 
+            Jekyll that uses plain ol' HTML, CSS and JavaScript to generate your website.
+            <div class="mt-2"></div>
+            <a class="github-button" href="https://github.com/chrisdiana/cms.js" data-show-count="true" aria-label="Star chrisdiana/cms.js on GitHub">Star</a>
+          </dd>
+          <dt>
+            <a href="https://github.com/chrisdiana/simplestore" target="_blank">SimpleStore</a>
+          </dt>
+          <dd>
+            A clean, responsive storefront boilerplate with no database or backend.
+            <div class="mt-2"></div>
+            <a class="github-button" href="https://github.com/chrisdiana/simplestore" data-show-count="true" aria-label="Star chrisdiana/simplestore on GitHub">Star</a>
+          </dd>
+          <dt>
+            <a href="https://github.com/chrisdiana/itg_flat_vim" target="_blank">itg_flat for Vim</a>
+          </dt>
+          <dd>
+            Port of the itg_flat theme for Vim.
+            <div class="mt-2"></div>
+            <a class="github-button" href="https://github.com/chrisdiana/itg_flat_vim" data-show-count="true" aria-label="Star chrisdiana/itg_flat_vim on GitHub">Star</a>
+          </dd>
+        </dl>
+      </section>
 
+      <div class="divider"></div>
+
+      <section>
+        <div class="columns">
+          <div class="column col-6 col-md-12">
+            <h4>Subscribe for updates</h4>
+            <p>
+              Get a short email straight to your inbox whenever I:
+            </p>
+            <ul>
+              <li>
+                write more <b>learning material</b><br>
+                <small class="text-gray">
+                  (like 
+                  <a href="https://medium.com/@chrisdiana" target="_blank">tutorials</a> or 
+                  <a href="https://medium.com/@chrisdiana" target="_blank">articles</a>)
+                 </small>
+              </li>
+              <li>
+                contribute to <b>open source</b><br>
+                <small class="text-gray">
+                  (like 
+                  <a href="https://github.com/chrisdiana/cms.js" target="_blank">CMS.js</a> and 
+                  <a href="https://github.com/chrisdiana/simplestore" target="_blank">SimpleStore</a>)
+                </small>
+              </li>
+              <li>
+                share <b>free tools or resources</b><br>
+                <small class="text-gray">
+                  (like 
+                    <a href="https://github.com/chrisdiana/itg_flat_vim" target="_blank">itg_flat_vim</a> and 
+                    <a href="https://github.com/chrisdiana/awesome-odroid-go" target="_blank">awesome-odroid-go</a>) 
+                </small>
+              </li>
+            </ul>
+            <div class="mt-2"></div>
+          </div>
+          <div class="column col-6 col-md-12">
+            <div class="subscribe-form bg-gray">
+              <form action="https://chris-diana.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="mce-FNAME">Name</label>
+                  <input class="form-input" type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="e.g. Chris">
+                  <label class="form-label" for="mce-EMAIL">Email</label>
+                  <input class="form-input required email email-signup-input" type="text" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="e.g. you@gmail.com">
+                </div>
+                <div class="form-group mt-2">
+                  <button class="btn btn-primary mt-2">Subscribe</button><br>
+                  <small class="text-gray mt-2">( No spam of course! 😊 )</small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
     </main>
 
-    <!-- Footer -->
-    <div class="footer">
-      <div class="email-signup">
-        <hr>
-        <div class="social-links-footer">
-          <a target="_blank" title="Github" href="//github.com/chrisdiana"><i class="fab fa-github"></i></a>
-          <a target="_blank" title="Stack Overflow" href="//stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
-          <a target="_blank" title="NPM" href="//npmjs.com/~chrisdiana"><i class="fab fa-npm"></i></a>
-          <a target="_blank" title="Dribbble" href="//dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
-          <a target="_blank" title="LinkedIn" href="//www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <div class="email-signup-header">Sign up for updates on the latest articles, resources, tutorials and more.</div>
-        <form action="https://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=02b3438a51" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <input type="email" value="" placeholder="Email Address" name="EMAIL" class="required email email-signup-input" id="mce-EMAIL">
-          <div id="mce-responses" class="clear">
-            <div class="response" id="mce-error-response" style="display:none"></div>
-            <div class="response" id="mce-success-response" style="display:none"></div>
-          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6a958cda028d0d312d1ef3ccd_02b3438a51" tabindex="-1" value=""></div>
-          <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button email-signup-button">Signup</button>
-        </form>
+    <footer>
+      <div class="text-center social-links">
+        <a target="_blank" title="Github" href="https://github.com/chrisdiana"><i class="fab fa-github"></i></a>
+        <a target="_blank" title="Medium" href="https://medium.com/@chrisdiana"><i class="fab fa-medium-m"></i></a>
+        <a target="_blank" title="NPM" href="https://npmjs.com/~chrisdiana"><i class="fab fa-npm"></i></a>
+        <a target="_blank" title="Stack Overflow" href="https://stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
+        <a target="_blank" title="Dribbble" href="https://dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
+        <a target="_blank" title="LinkedIn" href="https://www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
       </div>
-    </div>
+    </footer>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127054989-1"></script>
@@ -175,7 +272,8 @@ img.profile-pic {
 
       gtag('config', 'UA-127054989-1');
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

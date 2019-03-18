@@ -1,0 +1,13 @@
+{
+  "name": "personal-site",
+  "version": "3.0.0",
+  "description": "Personal website",
+  "author": "Chris Diana",
+  "main": "index.html",
+  "scripts": {
+    "start": "./node_modules/.bin/hs"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
