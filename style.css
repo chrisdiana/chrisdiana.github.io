@@ -22,15 +22,15 @@ a {
   color: #4ea8f8 !important;
 }
 
-a.active, 
-a:active, 
-a:focus, 
+a.active,
+a:active,
+a:focus,
 a:hover {
   color: #4599e3;
 }
 
 a:focus {
-  box-shadow: 0 0 0 0.1rem rgb(78, 168, 248);
+  box-shadow: none;
 }
 
 dt > a {
