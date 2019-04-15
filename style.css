@@ -37,6 +37,10 @@ dt > a {
   color: #3b4351 !important;
 }
 
+#intro {
+  margin-bottom: 5rem;
+}
+
 .navbar .brand {
   max-width: 45px;
   margin-left: 10px;
