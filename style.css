@@ -143,9 +143,25 @@ dt > a {
   border-color: #f1f1fc;
 }
 
+.label.label-secondary {
+  color: #1e91d5;
+}
+
 .timeline .timeline-item .timeline-icon.icon-lg {
   background: #4ea8f8;
 }
 .timeline-icon {
   color: #fff !important;
 }
+.tile-subtitle {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
