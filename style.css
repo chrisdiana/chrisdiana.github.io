@@ -132,3 +132,20 @@ dt > a {
 .mt-3 {
   margin-top: 1rem !important;
 }
+
+.btn {
+  border: .05rem solid #4ea8f8;
+  color: #4ea8f8;
+}
+
+.btn:focus,
+.btn:hover {
+  border-color: #f1f1fc;
+}
+
+.timeline .timeline-item .timeline-icon.icon-lg {
+  background: #4ea8f8;
+}
+.timeline-icon {
+  color: #fff !important;
+}
