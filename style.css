@@ -1,124 +1,33 @@
-main {
-  padding: 0 2rem 2rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+html {
+  box-sizing: border-box;
 }
 
-header {
-  padding: 2rem 2rem 0 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-section {
-  margin: 2rem 0;
+html, body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #777;
 }
 
-footer {
-  margin-bottom: 4rem;
+body {
 }
 
 a {
-  color: #4ea8f8 !important;
+  color: rgb(138, 174, 206);
+  text-decoration: none;
 }
 
 a.active,
 a:active,
 a:focus,
 a:hover {
-  color: #4599e3;
-}
-
-a:focus {
-  box-shadow: none;
-}
-
-dt > a {
-  color: #3b4351 !important;
-}
-
-.navbar .brand {
-  max-width: 45px;
-  margin-left: 10px;
-}
-
-.btn.btn-link {
-  color: #777;
-}
-
-.navbar .btn-link {
-  color: #ccc !important;
-  font-weight: 100;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-.bg-primary {
-  background: #4ea8f8 !important;
-  color: #fff;
-}
-
-.bg-secondary {
-  background: #ebf3fb !important;
-}
-
-.btn.btn-primary {
-  background: #4ea8f8;
-  border-color: #51a8f3;
-  color: #fff;
-}
-
-.btn.btn-primary:focus, .btn.btn-primary:hover {
-  background: #4599e3;
-  border-color: #4796da;
-  color: #fff;
-}
-
-.text-primary,
-.btn.btn-link.active,
-.btn.btn-link:active,
-.btn.btn-link:focus,
-.btn.btn-link:hover {
-  color: #56acf8 !important;
-}
-
-.form-input:focus {
-  border-color: #56acf8;
-  box-shadow: 0 0 0 .1rem rgba(87,85,217,.2);
-}
-
-.hero-body {
-  color: #777;
-  font-weight: 300;
-  font-size: 18px;
-  max-width: 800px;
-  margin-bottom: 2rem;
-}
-
-.divider {
-  margin: 3rem 0;
-}
-
-.subscribe-form {
-  margin: 2rem 0;
-  padding: 1.5rem;
-}
-
-.social-links {
-  font-size: 25px;
-}
-
-.social-links a {
-  color: #ccc !important;
-  margin-right: 1rem;
-}
-
-.social-links a.active,
-.social-links a:active,
-.social-links a:focus,
-.social-links a:hover {
-  color: #74bdfe !important;
+  color: #4ea8f8;
 }
 
 .mini-banner {
@@ -130,39 +39,119 @@ dt > a {
   position: absolute;
 }
 
-.mt-3 {
-  margin-top: 1rem !important;
+/* Intro */
+
+.brand {
+  max-width: 50px;
+  margin-bottom: 2rem;
 }
 
-.btn {
-  border: .05rem solid #4ea8f8;
+
+.intro {
+  font-family: monospace;
+  height: 100%;
+  font-size: 15px;
+  line-height:  20px;
+  padding: 4rem 5rem;
+  max-width: 925px;
+}
+
+.intro-links {
+  margin-top: 1em;
+  color: rgb(138, 174, 206);
+}
+
+.social-links {
+  margin-top: 1.5em;
+}
+
+.social-links a {
+  color: rgb(222, 224, 226);
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.social-links a:hover {
   color: #4ea8f8;
 }
 
-.btn:focus,
-.btn:hover {
-  border-color: #f1f1fc;
+/* Projects */
+
+#projects {
+  background: rgba(70, 70, 70, 0.15);
+  position: absolute;
+  bottom: 0rem;
+  right: 3rem;
+  height: 0;
+  width: 300px;
+  z-index: 999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
-.label.label-secondary {
-  color: #1e91d5;
+#projects.open {
+  height: 100%;
+  bottom: 0;
+  padding: 0.5rem;
 }
 
-.timeline .timeline-item .timeline-icon.icon-lg {
-  background: #4ea8f8;
-}
-.timeline-icon {
-  color: #fff !important;
-}
-.tile-subtitle {
-  font-size: 22px;
-  font-weight: 500;
+#projects img {
+  max-width: 100%;
+  margin: 8px 0;
+  transition: all 0.5s ease-in-out;
 }
 
-.show {
-  display: block;
-}
-.hide {
-  display: none;
+#projects img:hover {
+  animation: jiggle 0.2s infinite;
+  -webkit-animation: jiggle 0.2s infinite;
+    -moz-animation-duration: 0.2s;
+    -moz-animation-name: jiggle;
+    -moz-animation-iteration-count: infinite;
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
 }
 
+@media screen and (max-width:480px) {
+  .intro {
+    padding: 3rem 2rem;
+  }
+  #projects {
+    background: transparent;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0.5rem;
+  }
+}
+
+@keyframes jiggle {
+    0% {
+        transform: rotate(-1deg);
+  }
+  50% {
+      transform: rotate(1deg);
+  }
+}
+
+@-webkit-keyframes jiggle {
+    0% {
+        -webkit-transform: rotate(-1deg);
+  }
+  50% {
+      -webkit-transform: rotate(1deg);
+  }
+}
+
+@-moz-keyframes jiggle {
+    0% {
+        -moz-transform: rotate(-1deg);
+  }
+  50% {
+    -moz-transform: rotate(1deg);
+  }
+}

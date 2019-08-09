@@ -14,7 +14,6 @@ function error(message) {
 
 function decrypt(ciphertext, key) {
   var bytes  = CryptoJS.AES.decrypt(ciphertext, key);
-  if(!bytes.toString(CryptoJS.enc.Utf8)) error('sdfsdf')
   return bytes.toString(CryptoJS.enc.Utf8);
 }
 
