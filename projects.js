@@ -1,0 +1,86 @@
+window.projects = [
+  {
+    title: 'automateFitness',
+    description: '',
+    link: 'https://dribbble.com/shots/5253468',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5253468/automatefitness-full.jpg',
+  },
+  {
+    title: 'Pittsburgh Cares',
+    description: '',
+    link: 'https://dribbble.com/shots/5260423',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5260423/pghcares.jpg',
+  },
+  {
+    title: 'Datumbased',
+    description: '',
+    link: 'https://dribbble.com/shots/6199222',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6199222/screen_shot_2019-03-18_at_16.59.30-fullpage_4x.png',
+  },
+  {
+    title: '3D Network Visualization',
+    description: '',
+    link: 'https://dribbble.com/shots/6198114',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif',
+  },
+  {
+    title: 'SimpleStore',
+    description: '',
+    link: 'https://dribbble.com/shots/5263598',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg',
+  },
+  {
+    title: 'RamenBar',
+    description: '',
+    link: 'https://dribbble.com/shots/4670169',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4670169/ramenbar.jpg',
+  },
+  {
+    title: 'TruckDuty',
+    description: '',
+    link: 'https://dribbble.com/shots/5263724',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263724/truckduty-full.jpg',
+  },
+  {
+    title: 'Network Data Visualization',
+    description: '',
+    link: 'https://dribbble.com/shots/6198120',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198120/vis.gif',
+  },
+  {
+    title: 'Loclii',
+    description: '',
+    link: 'https://dribbble.com/shots/4610070',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4610070/loclii-full.jpg',
+  },
+  {
+    title: 'Comeback Clothing',
+    description: '',
+    link: 'https://dribbble.com/shots/4670175',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4670175/comebackclothing.jpg',
+  },
+  {
+    title: 'CMS.js',
+    description: '',
+    link: 'https://dribbble.com/shots/5263715',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263715/cms-js-full.jpg',
+  },
+  {
+    title: 'Crimper\'s Climbing',
+    description: '',
+    link: 'https://dribbble.com/shots/6192817',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6192817/crimpers-full.jpg',
+  },
+  {
+    title: 'BizPrinters.com',
+    description: '',
+    link: 'https://dribbble.com/shots/5270409',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5270409/bizprinters-full.jpg',
+  },
+  {
+    title: 'Big Data A.I.',
+    description: '',
+    link: 'https://dribbble.com/shots/5253468',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4670177/bigdataai.jpg',
+  },
+];

@@ -15,9 +15,6 @@ html, body {
   color: #777;
 }
 
-body {
-}
-
 a {
   color: rgb(138, 174, 206);
   text-decoration: none;
@@ -45,7 +42,6 @@ a:hover {
   max-width: 50px;
   margin-bottom: 2rem;
 }
-
 
 .intro {
   font-family: monospace;
@@ -78,31 +74,39 @@ a:hover {
 /* Projects */
 
 #projects {
-  background: rgba(70, 70, 70, 0.15);
-  position: absolute;
-  bottom: 0rem;
-  right: 3rem;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
   height: 0;
-  width: 300px;
-  z-index: 999;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  width: 100%;
+  cursor: default;
   transition: all 0.5s ease-in-out;
 }
 
 #projects.open {
   height: 100%;
-  bottom: 0;
-  padding: 0.5rem;
+  width: 100%;
 }
 
-#projects img {
+.projects-list {
+  position: absolute;
+  bottom: 1rem;
+  top: 0.5rem;
+  right: 1rem;
+  width: 20%;
+  height: 100%;
+  z-index: 999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.projects-list img {
   max-width: 100%;
   margin: 8px 0;
-  transition: all 0.5s ease-in-out;
 }
 
-#projects img:hover {
+.projects-list img:hover {
   animation: jiggle 0.2s infinite;
   -webkit-animation: jiggle 0.2s infinite;
     -moz-animation-duration: 0.2s;
@@ -112,6 +116,22 @@ a:hover {
     -moz-transform: rotate(-1deg);
 }
 
+.project-preview-container {
+  height: 100%;
+  width: 80%;
+  padding: 3rem 2rem;
+}
+
+.project-preview-img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.hide { display: none !important; }
+.show { display: block !important; }
+
 @media screen and (max-width:480px) {
   .intro {
     padding: 3rem 2rem;
@@ -119,37 +139,45 @@ a:hover {
   #projects {
     background: transparent;
     position: relative;
-    bottom: 0;
-    right: 0;
-    height: 0;
+    height: auto;
+  }
+  #projects.open > .projects-list {
     width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0.5rem;
+    position: relative;
+    background: transparent;
+    padding: 1rem;
+    margin: 0 auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .project-preview-container {
+    display: none;
   }
 }
 
 @keyframes jiggle {
-    0% {
-        transform: rotate(-1deg);
+  0% {
+    transform: rotate(-1deg);
   }
   50% {
-      transform: rotate(1deg);
+    transform: rotate(1deg);
   }
 }
 
 @-webkit-keyframes jiggle {
-    0% {
-        -webkit-transform: rotate(-1deg);
+  0% {
+    -webkit-transform: rotate(-1deg);
   }
   50% {
-      -webkit-transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
   }
 }
 
 @-moz-keyframes jiggle {
-    0% {
-        -moz-transform: rotate(-1deg);
+  0% {
+    -moz-transform: rotate(-1deg);
   }
   50% {
     -moz-transform: rotate(1deg);

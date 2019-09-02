@@ -1,120 +1,63 @@
 'use strict';
 
-function showSubscribePopUp() {
-  window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"6a958cda028d0d312d1ef3ccd","lid":"02b3438a51","uniqueMethods":true}) });
-  document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-}
-
 (function() {
 
-  var projectsEl = document.getElementById('projects');
-  var projectsOpen = false;
-
-  var projects = [
-    { 
-      link: 'https://dribbble.com/shots/5253468',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/5253468/automatefitness-full.jpg',
-    },
-    { 
-      link: 'https://dribbble.com/shots/5260423',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/5260423/pghcares.jpg',
-    },
-      { 
-      link: 'https://dribbble.com/shots/6199222',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/6199222/screen_shot_2019-03-18_at_16.59.30-fullpage_4x.png',
-    },
-      { 
-      link: 'https://dribbble.com/shots/4670169',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/4670169/ramenbar.jpg',
-    },
-      { 
-      link: 'https://dribbble.com/shots/5263724',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/5263724/truckduty-full.jpg',
-    },
-    { 
-      link: 'https://dribbble.com/shots/5263598',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg',
-    },
-    { 
-      link: 'https://dribbble.com/shots/4610070',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/4610070/loclii-full.jpg',
-    },
-    { 
-      link: 'https://dribbble.com/shots/4670177',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/5253468/automatefitness-full.jpg',
-    },
-    { 
-      link: 'https://dribbble.com/shots/5253468',
-      src: 'https://cdn.dribbble.com/users/84464/screenshots/4670177/bigdataai.jpg',
-    },
-  ];
-
-  document.getElementById('subscribe').onclick = function() {
-    showSubscribePopUp();
+  var els = {
+    projects: document.getElementById('projects'),
+    list: document.createElement('div'),
+    preview: document.createElement('div'),
   };
 
-  document.addEventListener("DOMContentLoaded", function() {
-    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    let active = false;
+  var projectsOpen = false;
 
-    const lazyLoad = function() {
-      if (active === false) {
-        active = true;
-
-        setTimeout(function() {
-          lazyImages.forEach(function(lazyImage) {
-            if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-              lazyImage.src = lazyImage.dataset.src;
-              // lazyImage.srcset = lazyImage.dataset.srcset;
-              lazyImage.classList.remove("lazy");
-
-              lazyImages = lazyImages.filter(function(image) {
-                return image !== lazyImage;
-              });
-
-              if (lazyImages.length === 0) {
-                document.removeEventListener("scroll", lazyLoad);
-                window.removeEventListener("resize", lazyLoad);
-                window.removeEventListener("orientationchange", lazyLoad);
-              }
-            }
-          });
-
-          active = false;
-        }, 200);
-      }
-    };
-
-    document.addEventListener("scroll", lazyLoad);
-    window.addEventListener("resize", lazyLoad);
-    window.addEventListener("orientationchange", lazyLoad);
-  });
-
-  function loadProjects() {
-    projects.forEach(function(project) {
-      var el = document.createElement('div');
-      var link = document.createElement('a');
-      var img = document.createElement('img');
-      el.className = 'project-img';
-      link.setAttribute('target', '_blank');
-      link.setAttribute('href', project.link);
-      img.setAttribute('src', project.src);
-      link.appendChild(img);
-      el.appendChild(link);
-      projectsEl.appendChild(el);
-    });
+  function initElements() {
+    els.list.className = 'projects-list';
+    els.preview.className = 'project-preview-container';
+    els.projects.appendChild(els.preview);
+    els.projects.appendChild(els.list);
   }
 
-  document.getElementById('projects-link').addEventListener('click', function(e) {
-    projectsEl.classList.add('open');
-    projectsOpen = true;
-  }, true);
+  function loadPreview(index) {
+    els.preview.innerHTML = '';
+    var img = document.createElement('img');
+    img.setAttribute('src', window.projects[index].src);
+    img.className = 'project-preview-img';
+    els.preview.appendChild(img);
+  }
 
-  document.getElementById('intro').addEventListener('click', function(e) {
-    if(projectsOpen) {
-      projectsEl.classList.remove('open');
+  function loadProjects() {
+    window.projects.forEach(function(project, index) {
+      var img = document.createElement('img');
+      img.className = 'project-img';
+      img.setAttribute('src', project.src);
+      img.setAttribute('data-index', index);
+      els.list.appendChild(img);
+    });
+    loadPreview(0);
+  }
+
+  document.body.addEventListener('click', function(e) {
+
+    // Show projects
+    if(e.target.classList.contains('projects-link')) {
+      els.projects.classList.add('open');
+      projectsOpen = true;
+    }
+
+    // Load preview
+    if(e.target.classList.contains('project-img')) {
+      loadPreview(e.target.getAttribute('data-index'));
+    }
+
+    // // Close projects
+    if(projectsOpen && 
+      (e.target.id == 'projects' || 
+      e.target.classList.contains('project-preview-container'))) {
+      els.projects.classList.remove('open');
     }
   }, true);
 
+  initElements();
   loadProjects();
+
 })();
