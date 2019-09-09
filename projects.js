@@ -1,5 +1,11 @@
 window.projects = [
   {
+    title: '3D Network Visualization',
+    description: '',
+    link: 'https://dribbble.com/shots/6198114',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif',
+  },
+  {
     title: 'automateFitness',
     description: '',
     link: 'https://dribbble.com/shots/5253468',
@@ -16,12 +22,6 @@ window.projects = [
     description: '',
     link: 'https://dribbble.com/shots/6199222',
     src: 'https://cdn.dribbble.com/users/84464/screenshots/6199222/screen_shot_2019-03-18_at_16.59.30-fullpage_4x.png',
-  },
-  {
-    title: '3D Network Visualization',
-    description: '',
-    link: 'https://dribbble.com/shots/6198114',
-    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif',
   },
   {
     title: 'SimpleStore',
