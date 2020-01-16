@@ -1,11 +1,5 @@
 window.projects = [
   {
-    title: '3D Network Visualization',
-    description: '',
-    link: 'https://dribbble.com/shots/6198114',
-    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif',
-  },
-  {
     title: 'automateFitness',
     description: '',
     link: 'https://dribbble.com/shots/5253468',
@@ -30,6 +24,12 @@ window.projects = [
     src: 'https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg',
   },
   {
+    title: '3D Network Visualization',
+    description: '',
+    link: 'https://dribbble.com/shots/6198114',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif',
+  },
+  {
     title: 'RamenBar',
     description: '',
     link: 'https://dribbble.com/shots/4670169',
@@ -42,12 +42,6 @@ window.projects = [
     src: 'https://cdn.dribbble.com/users/84464/screenshots/5263724/truckduty-full.jpg',
   },
   {
-    title: 'Network Data Visualization',
-    description: '',
-    link: 'https://dribbble.com/shots/6198120',
-    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198120/vis.gif',
-  },
-  {
     title: 'Loclii',
     description: '',
     link: 'https://dribbble.com/shots/4610070',
@@ -58,6 +52,12 @@ window.projects = [
     description: '',
     link: 'https://dribbble.com/shots/4670175',
     src: 'https://cdn.dribbble.com/users/84464/screenshots/4670175/comebackclothing.jpg',
+  },
+  {
+    title: 'Network Data Visualization',
+    description: '',
+    link: 'https://dribbble.com/shots/6198120',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6198120/vis.gif',
   },
   {
     title: 'CMS.js',
