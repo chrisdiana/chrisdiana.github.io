@@ -18,16 +18,22 @@ window.projects = [
     src: 'https://cdn.dribbble.com/users/84464/screenshots/6199222/screen_shot_2019-03-18_at_16.59.30-fullpage_4x.png',
   },
   {
-    title: 'SimpleStore',
-    description: '',
-    link: 'https://dribbble.com/shots/5263598',
-    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg',
-  },
-  {
     title: '3D Network Visualization',
     description: '',
     link: 'https://dribbble.com/shots/6198114',
     src: 'https://cdn.dribbble.com/users/84464/screenshots/6198114/3d.gif',
+  },
+  {
+    title: 'TSNE Clustering Visualization - Word Embeddings (NLP)',
+    description: '',
+    link: 'https://dribbble.com/shots/10983481',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/10983481/media/57350418b825b658689643648698db00.gif',
+  },
+  {
+    title: 'SimpleStore',
+    description: '',
+    link: 'https://dribbble.com/shots/5263598',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg',
   },
   {
     title: 'RamenBar',
@@ -71,12 +77,12 @@ window.projects = [
     link: 'https://dribbble.com/shots/6192817',
     src: 'https://cdn.dribbble.com/users/84464/screenshots/6192817/crimpers-full.jpg',
   },
-  {
-    title: 'BizPrinters.com',
-    description: '',
-    link: 'https://dribbble.com/shots/5270409',
-    src: 'https://cdn.dribbble.com/users/84464/screenshots/5270409/bizprinters-full.jpg',
-  },
+  //{
+  //  title: 'BizPrinters.com',
+  //  description: '',
+  //  link: 'https://dribbble.com/shots/5270409',
+  //  src: 'https://cdn.dribbble.com/users/84464/screenshots/5270409/bizprinters-full.jpg',
+  //},
   {
     title: 'Big Data A.I.',
     description: '',
