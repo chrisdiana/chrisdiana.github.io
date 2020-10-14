@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
+    <title>Chris Diana - Developer // Designer</title>
+    <!-- Designer, Evangelist, Advisor, Consultant, Data / Visualization Specialist, Technical Leader, Writer, Author -->
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400&display=swap">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=IBM+Plex+Mono:100,200,400">
+    <link rel="stylesheet" href="/style.css">
+		<style>
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #777;
+}
+
+body {
+}
+
+a {
+  color: rgb(138, 174, 206);
+  text-decoration: none;
+}
+
+a.active,
+a:active,
+a:focus,
+a:hover {
+  color: #4ea8f8;
+}
+
+
+.mini-banner {
+  background: rgb(138,174,206);
+  background-image: -webkit-gradient(linear,0% 0%,40% 100%,from(#7B417E),to(#91AECA));
+  height: 5px;
+  width: 100%;
+  z-index: 999;
+  position: absolute;
+}
+
+
+/* Intro */
+
+.brand {
+  max-width: 50px;
+  margin-bottom: 2rem;
+}
+
+
+.intro {
+  font-family: monospace;
+  height: 100%;
+  font-size: 15px;
+  line-height:  20px;
+  padding: 4rem 5rem;
+  max-width: 925px;
+}
+
+.intro-links {
+  margin-top: 1em;
+  color: rgb(138, 174, 206);
+}
+
+.social-links {
+  margin-top: 1.5em;
+}
+
+.social-links a {
+  color: rgb(222, 224, 226);
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.social-links a:hover {
+  color: #4ea8f8;
+}
+
+/* Projects */
+
+#projects {
+  background: rgba(70, 70, 70, 0.15);
+  position: absolute;
+  bottom: 0rem;
+  right: 3rem;
+  height: 0;
+  width: 300px;
+  z-index: 999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+#projects.open {
+  height: 100%;
+  bottom: 0;
+  padding: 0.5rem;
+}
+
+#projects img {
+  max-width: 100%;
+  margin: 8px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#projects img:hover {
+	animation: jiggle 0.2s infinite;
+	-webkit-animation: jiggle 0.2s infinite;
+    -moz-animation-duration: 0.2s;
+    -moz-animation-name: jiggle;
+    -moz-animation-iteration-count: infinite;
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+}
+
+
+
+
+@media screen and (max-width:480px) {
+  .intro {
+    padding: 3rem 2rem;
+  }
+  #projects {
+    background: transparent;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0.5rem;
+  }
+}
+
+
+
+@keyframes jiggle {
+    0% {
+        transform: rotate(-1deg);
+	}
+	50% {
+    	transform: rotate(1deg);
+	}
+}
+
+@-webkit-keyframes jiggle {
+    0% {
+        -webkit-transform: rotate(-1deg);
+	}
+	50% {
+    	-webkit-transform: rotate(1deg);
+	}
+}
+
+@-moz-keyframes jiggle {
+    0% {
+        -moz-transform: rotate(-1deg);
+	}
+	50% {
+		-moz-transform: rotate(1deg);
+	}
+}
+
+
+
+/*
+
+
+.nav {
+  display: none;
+  position: fixed;
+  bottom: 8rem;
+  right: -6rem;
+  display: inline-block;
+  padding: 0;
+  transform: rotate(0.75turn);
+}
+
+a.tab-link {
+cursor: pointer;
+transition: 0.3s;
+font-size: 44px;
+color: #e4e4e4;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: 100;
+margin-right: 1.5rem;
+}
+
+a.tab-link.active {
+  color: #909090;
+}
+
+a.tab-link:active,
+a.tab-link:hover {
+  color: #909090;
+}
+
+#column-content {
+    display: inline-block;
+    border: 1px solid red;
+    position:relative;
+}
+
+#column-content strong {
+    color: #592102;
+    font-size: 18px;
+}
+
+img {
+    margin-top:-7px;
+    vertical-align: middle;
+}
+
+
+* {box-sizing: border-box}
+
+body, html {
+  height: 100%;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+section {
+  margin: 2rem 0;
+  padding-bottom: 4rem;
+}
+
+
+
+a:focus {
+  box-shadow: none;
+}
+
+.hero {
+  font-size: 22px;
+  font-weight: 100;
+  max-width: 800px;
+}
+
+
+
+
+.tab-content {
+  display: none;
+  height: 100%;
+  color: #777;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+.btn {
+  border: .05rem solid #4ea8f8;
+  color: #4ea8f8;
+}
+
+.btn:focus,
+.btn:hover {
+  border-color: #f1f1fc;
+}
+
+.btn.btn-link {
+  color: #777;
+}
+
+.bg-primary {
+  background: #4ea8f8 !important;
+  color: #fff;
+}
+
+.bg-secondary {
+  background: #ebf3fb !important;
+}
+
+.btn.btn-primary {
+  background: #4ea8f8;
+  border-color: #51a8f3;
+  color: #fff;
+}
+
+.btn.btn-primary:focus, .btn.btn-primary:hover {
+  background: #4599e3;
+  border-color: #4796da;
+  color: #fff;
+}
+
+.text-primary,
+.btn.btn-link.active,
+.btn.btn-link:active,
+.btn.btn-link:focus,
+.btn.btn-link:hover {
+  color: #56acf8 !important;
+}
+
+.divider {
+  margin: 3rem 0;
+}
+
+.social-links {
+font-size: 20px;
+position: fixed;
+left: 4rem;
+bottom: 2rem;
+padding: 0.25rem;
+transition: 0.3s;
+background: rgba(255, 255, 255, 0.95);
+border-radius: 0 25px 25px 0;
+}
+
+.social-links a {
+  color: #ccc !important;
+  margin-right: 1rem;
+}
+
+.social-links a.active,
+.social-links a:active,
+.social-links a:focus,
+.social-links a:hover {
+  color: #74bdfe !important;
+}
+
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.label.label-secondary {
+  color: #1e91d5;
+}
+
+.timeline .timeline-item .timeline-icon.icon-lg {
+  background: #4ea8f8;
+}
+
+.timeline-icon {
+  color: #fff !important;
+}
+
+.tile-subtitle {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+
+.graph-data {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.toggle-data-btn {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.toggle-data-btn:hover {
+    opacity: 1;
+}
+
+#graph-data-description {
+    font-size: 12px;
+    color: slategrey;
+}
+a-scene {
+    position: absolute;
+}
+
+
+
+
+
+
+
+.profile-pic {
+  padding: 0px;
+  width: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  border-radius: 75px;
+  border: 1px solid #c8c8c8;
+  display: block;
+  margin-bottom: 1.5em;
+}
+*/
+		</style>
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="mini-banner"></div>
+
+    <div class="intro" id="intro">
+      <img src="https://chrisdiana.dev/img/logo.png" class="brand" />
+      <p>
+        Hello, my name is Chris Diana! I am a developer &amp; designer with a passion for
+        innovative technology currently based in Boulder, CO.
+        By day, I'm part of the machine learning team at
+        <a href="https://nurx.com" target="_blank">Nurx</a>.
+        In my freetime, I enjoy experimenting with the latest web technologies
+        and sharing what I learn.
+      </p>
+
+      <div class="intro-links">
+        <a href="#" id="projects-link">Projects</a> &bull;
+        <a href="/cv.html">Experience</a> &bull;
+        <a href="#" id="subscribe">Subscribe</a> &bull;
+        <a mailto="cdiana.media@gmail.com">Get in touch</a>
+      </div>
+      <div class="social-links">
+        <a target="_blank" title="Github" href="https://github.com/chrisdiana"><i class="fab fa-github"></i></a>
+        <a target="_blank" title="Medium" href="https://medium.com/@chrisdiana"><i class="fab fa-medium-m"></i></a>
+        <a target="_blank" title="Stack Overflow" href="https://stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
+        <a target="_blank" title="Dribbble" href="https://dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
+        <a target="_blank" title="LinkedIn" href="https://www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div id="projects"></div>
+
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer></script>
+    <script src="/script.js" defer></script>
+		<script>
+/*
+ - Home / About / Social Links / Subscribe
+ - Open Source / Projects
+ - CV / Work / Companies / Consulting- add profile pic instead of logo / generate with JS?
+*/
+
+function showSubscribePopUp() {
+  window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"6a958cda028d0d312d1ef3ccd","lid":"02b3438a51","uniqueMethods":true}) });
+  document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+}
+
+document.getElementById('subscribe').onclick = function() {
+  showSubscribePopUp();
+};
+
+var projectsEl = document.getElementById('projects');
+var projectsOpen = false;
+
+
+var projects = [
+  {
+    link: 'https://dribbble.com/shots/5253468',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5253468/automatefitness-full.jpg',
+  },
+  {
+    link: 'https://dribbble.com/shots/5260423',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5260423/pghcares.jpg',
+  },
+    {
+    link: 'https://dribbble.com/shots/6199222',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/6199222/screen_shot_2019-03-18_at_16.59.30-fullpage_4x.png',
+  },
+    {
+    link: 'https://dribbble.com/shots/4670169',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4670169/ramenbar.jpg',
+  },
+    {
+    link: 'https://dribbble.com/shots/5263724',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263724/truckduty-full.jpg',
+  },
+  {
+    link: 'https://dribbble.com/shots/5263598',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5263598/simplestore-full.jpg',
+  },
+  {
+    link: 'https://dribbble.com/shots/4610070',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4610070/loclii-full.jpg',
+  },
+  {
+    link: 'https://dribbble.com/shots/4670177',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/5253468/automatefitness-full.jpg',
+  },
+  {
+    link: 'https://dribbble.com/shots/5253468',
+    src: 'https://cdn.dribbble.com/users/84464/screenshots/4670177/bigdataai.jpg',
+  },
+];
+
+function loadProjects() {
+  projects.forEach(function(project) {
+    var el = document.createElement('div');
+    var link = document.createElement('a');
+    var img = document.createElement('img');
+    el.className = 'project-img';
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', project.link);
+    img.setAttribute('src', project.src);
+    link.appendChild(img);
+    el.appendChild(link);
+    projectsEl.appendChild(el);
+  });
+}
+
+document.getElementById('projects-link').addEventListener('click', function(e) {
+  projectsEl.classList.add('open');
+  projectsOpen = true;
+}, true);
+
+document.getElementById('intro').addEventListener('click', function(e) {
+  if(projectsOpen) {
+    projectsEl.classList.remove('open');
+  }
+}, true);
+
+loadProjects();
+
+
+
+
+/*
+function openTab(id) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove('active')
+  }
+
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove('active')
+  }
+
+  document.getElementById(id).classList.add('active')
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  let active = false;
+
+  const lazyLoad = function() {
+    if (active === false) {
+      active = true;
+
+      setTimeout(function() {
+        lazyImages.forEach(function(lazyImage) {
+          if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+            lazyImage.src = lazyImage.dataset.src;
+            // lazyImage.srcset = lazyImage.dataset.srcset;
+            lazyImage.classList.remove("lazy");
+
+            lazyImages = lazyImages.filter(function(image) {
+              return image !== lazyImage;
+            });
+
+            if (lazyImages.length === 0) {
+              document.removeEventListener("scroll", lazyLoad);
+              window.removeEventListener("resize", lazyLoad);
+              window.removeEventListener("orientationchange", lazyLoad);
+            }
+          }
+        });
+
+        active = false;
+      }, 200);
+    }
+  };
+
+  document.addEventListener("scroll", lazyLoad);
+  window.addEventListener("resize", lazyLoad);
+  window.addEventListener("orientationchange", lazyLoad);
+});
+*/
+		</script>
+  </body>
+</html>
+
+

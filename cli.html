@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
+    <title>Chris Diana // Developer &amp; Designer</title>
+  <style>
+    * { margin:0; padding:0; }
+
+body {
+  margin: 1em;
+  color: #51796A;
+  text-shadow: 0 0 .8em #8F7;
+  font-weight: 500;
+  font-family: "Courier", monospace;
+  background-color: #000A0E;
+  background: rgba(0,10,14,1);
+}
+
+#result {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+}
+
+#cursor {
+	-webkit-animation: 1s blink step-end infinite;
+	animation: 1s blink step-end infinite;
+	color: #51796A;
+  font-family: "Courier", monospace;
+  font-weight: 500;
+  margin-left: -8px;
+  text-shadow: 0 0 .4em rgba(136, 255, 119, 0.31);
+}
+
+    .brand {
+      max-width: 30px;
+    }
+
+@keyframes "blink" {
+	from, to {
+		color: transparent;
+	}
+	50% {
+		color: #51796A;
+    font-weight: 500;
+    font-family: "Courier";
+	}
+}
+
+@-webkit-keyframes "blink" {
+	from, to {
+		color: transparent;
+		}
+	50% {
+		color: #51796A;
+    font-weight: 500;
+    font-family: "Courier";
+	}
+}
+
+
+</style>
+  </head>
+  <body>
+
+    <div id="menu">
+    </div>
+    <div id="result">
+      <span id="cmds"></span>
+      <span id="cursor">🁢</span>
+    </div>
+
+
+    <script src="/cli.js" defer></script>
+  </body>
+</html>
+
+
+
