@@ -4,15 +4,6 @@
  - CV / Work / Companies / Consulting- add profile pic instead of logo / generate with JS?
 */
 
-function showSubscribePopUp() {
-  window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"6a958cda028d0d312d1ef3ccd","lid":"02b3438a51","uniqueMethods":true}) });
-  document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-}
-
-document.getElementById('subscribe').onclick = function() {
-  showSubscribePopUp();
-};
-
 var projectsEl = document.getElementById('projects');
 var projectsOpen = false;
 

@@ -9,16 +9,13 @@ html {
 }
 
 html, body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-	font-family: 'Source Code Pro', monospace;
+  font-family: 'Major Mono Display', monospace;
+  font-family: 'Ubuntu Mono', monospace;
   font-family: 'Share Tech Mono', monospace;
   margin: 0;
   padding: 0;
-  color: #777;
 	background: #101010;
-}
-
-body {
+	background: rgb(33, 34, 36);
 }
 
 a {
@@ -33,6 +30,36 @@ a:hover {
   color: #4ea8f8;
 }
 
+.main {
+  position: relative;
+  padding: 4rem 5rem;
+  padding: 70px 70px;
+  max-width: 925px;
+  color: #fff;
+	font-weight: 200;
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.muted {
+  font-size: 16px;
+  line-height: 24px;
+  color: #b4b4b4;
+}
+
+.social-links {
+  margin-top: 1.5em;
+  letter-spacing: 12px;
+  font-size: 22px;
+}
+
+.social-links a {
+  color: rgb(222, 224, 226);
+}
+
+.social-links a:hover {
+  color: #4ea8f8;
+}
 
 .mini-banner {
   background: rgb(138,174,206);
@@ -43,46 +70,33 @@ a:hover {
   position: absolute;
 }
 
-
-/* Intro */
-
-.brand {
-  max-width: 50px;
+.logo {
+  max-width: 55px;
   margin-bottom: 2rem;
 }
 
-
-.intro {
-  height: 100%;
-  font-size: 17px;
-  line-height:  20px;
-  padding: 4rem 5rem;
-  max-width: 925px;
-	font-weight: 300;
-}
-
-.intro-links {
-  margin-top: 1em;
-  color: rgb(138, 174, 206);
-}
-
-.social-links {
-  margin-top: 1.5em;
-}
-
-.social-links a {
-  color: rgb(222, 224, 226);
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.social-links a:hover {
-  color: #4ea8f8;
-}
-
 @media (max-width:700px) {
-  .intro	{
-    padding: 5px 10px;
+  html, body {
+    height: 100%;
+  }
+  .main {
+    padding: 2rem 1.2rem 5rem 1.2rem;
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .muted {
+  }
+  .social-links {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 15px;
+    letter-spacing: 20px;
+	  background: rgb(33, 34, 36);
+    border-top: 1px solid #141414 ;
+    letter-spacing: 32px;
   }
 }
 
