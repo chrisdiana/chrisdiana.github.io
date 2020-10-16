@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology currently based in Boulder, CO.">
-    <title>Chris Diana</title>
+    <meta name="description" content="Hello, my name is Chris Diana! I am a developer and designer with a passion for innovative technology.">
+    <title>Chris Diana - Developer // Designer</title>
     <!-- Designer, Evangelist, Advisor, Consultant, Data / Visualization Specialist, Technical Leader, Writer, Author -->
 
     <!-- Icons -->
@@ -18,34 +18,139 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400&display=swap">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=IBM+Plex+Mono:100,200,400">
+
+
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Source+Code+Pro:wght@200;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Major+Mono+Display&family=Share+Tech+Mono&family=Source+Code+Pro:wght@200;300;400&family=Space+Mono&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="dark.css">
+		<style>
+			html {
+				box-sizing: border-box;
+			}
+			*,*::before,*::after {
+			  box-sizing: inherit;
+			}
+			
+			html, body {
+			  font-family: 'Share Tech Mono', monospace;
+			  margin: 0;
+			  padding: 0;
+				background: #101010;
+				background: rgb(33, 34, 36);
+			}
+			
+			a {
+			  color: rgb(138, 174, 206);
+			  text-decoration: none;
+			}
+			
+			a.active,a:active,a:focus,a:hover {
+			  color: #4ea8f8;
+			}
+			
+			.main {
+			  position: relative;
+			  padding: 4rem 5rem;
+			  padding: 70px 70px;
+			  max-width: 925px;
+			  color: #fff;
+				font-weight: 200;
+			  font-size: 20px;
+			  line-height: 34px;
+			}
+			
+			.muted {
+			  font-size: 16px;
+			  line-height: 24px;
+			  color: #b4b4b4;
+			}
+			
+			.social-links {
+			  margin-top: 1.5em;
+			  letter-spacing: 12px;
+			  font-size: 22px;
+			}
+			
+			.social-links a {
+			  color: rgb(222, 224, 226);
+			}
+			
+			.social-links a:hover {
+			  color: #4ea8f8;
+			}
+			
+			.mini-banner {
+			  background: rgb(138,174,206);
+			  background-image: -webkit-gradient(linear,0% 0%,40% 100%,from(#7B417E),to(#91AECA));
+			  height: 5px;
+			  width: 100%;
+			  z-index: 999;
+			  position: absolute;
+			}
+			
+			.logo {
+			  max-width: 55px;
+			  margin-bottom: 2rem;
+			}
+			
+			@media (max-width:700px) {
+			  html, body {
+			    height: 100%;
+			  }
+			  .main {
+			    padding: 2rem 1.2rem 5rem 1.2rem;
+			    font-size: 18px;
+			    line-height: 32px;
+			  }
+			  .social-links {
+			    text-align: center;
+			    position: fixed;
+			    bottom: 0;
+			    width: 100%;
+			    left: 0;
+			    padding: 15px;
+			    letter-spacing: 20px;
+				  background: rgb(33, 34, 36);
+			    border-top: 1px solid #141414 ;
+			    letter-spacing: 32px;
+			  }
+			}
+		</style>
+
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <![endif]-->
   </head>
   <body>
-
-    <div class="mini-banner"></div>
-
     <div class="main">
-      <img src="/img/logo.png" class="logo" />
+      <img src="https://chrisdiana.dev/img/logo.png" class="logo" />
+      <p>
+        hello i'm chris diana, <br>
+        a developer &amp; designer with a passion for innovative technology
+      </p>
+      <p class="muted">
+        by day, i lead the engineering &amp; data science team at.
+        in my freetime, I enjoy experimenting with the latest web technologies and sharing what i learn.
+        <a href="#" id="subscribe">subscribe</a> to get updates on new &amp; exciting projects.</span>
+      </p>
+      <!--
+      <p>
+        Hello, my name is Chris Diana! I am the founder of West Beta Software where we develop intuitive,
+        cutting edge software solutions. Check us out here or find me around the web below.
+      </p>-->
+      <div class="social-links">
+        <a target="_blank" title="Github" href="https://github.com/chrisdiana"><i class="fab fa-github"></i></a>
+        <a target="_blank" title="Medium" href="https://medium.com/@chrisdiana"><i class="fab fa-medium-m"></i></a>
+        <a target="_blank" title="Stack Overflow" href="https://stackoverflow.com/users/1073821/chris-diana"><i class="fab fa-stack-overflow"></i></a>
+        <a target="_blank" title="Dribbble" href="https://dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
+        <a target="_blank" title="LinkedIn" href="https://www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
+      </div>
     </div>
-    <div class="social-links">
-      <a target="_blank" title="Github" href="https://github.com/chrisdiana"><i class="fab fa-github"></i></a>
-      <!--<a target="_blank" title="Medium" href="https://medium.com/@chrisdiana"><i class="fab fa-medium-m"></i></a>-->
-      <a target="_blank" title="Dribbble" href="https://dribbble.com/chrisdiana"><i class="fab fa-dribbble"></i></a>
-      <a target="_blank" title="Angellist" href="https://angel.co/chrisdiana"><i class="fab fa-angellist"></i></a>
-      <a target="_blank" title="LinkedIn" href="https://www.linkedin.com/in/chris-diana"><i class="fab fa-linkedin"></i></a>
-      <a target="_blank" title="Subscribe" href="https://eepurl.com/gntUvf"><i class="fas fa-bullhorn"></i></a>
-    </div>
 
-    <div class="contact-links"></div>
-
-    <div id="projects"></div>
-    <div id="project"></div>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127054989-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -54,8 +159,19 @@
 
       gtag('config', 'UA-127054989-1');
     </script>
-    <script src="//use.fontawesome.com/releases/v5.3.1/js/all.js" defer></script>
-    <script src="projects.js" defer></script>
-    <script src="script.js" defer></script>
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer></script>
+    <script>
+      function showSubscribePopUp() {
+        window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"6a958cda028d0d312d1ef3ccd","lid":"02b3438a51","uniqueMethods":true}) });
+        document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+      }
+ 		document.getElementById('subscribe').onclick = function() {
+        showSubscribePopUp();
+      };
+    </script>
   </body>
 </html>
+
+
+
